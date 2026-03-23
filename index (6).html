@@ -1,0 +1,1846 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%231d4ed8'/><text x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='Inter,sans-serif' font-size='14' font-weight='800' fill='white'>21</text></svg>">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stop Hiring to Grow | 21Do.XYZ</title>
+<link rel="canonical" href="https://21do.xyz">
+<meta name="description" content="Grow without scaling your team. Replace manual execution with structured AI workflows, built-in approvals, and company-level control.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Stop Hiring to Grow | 21Do.XYZ">
+<meta property="og:description" content="Grow without scaling your team. Replace manual execution with structured AI workflows, built-in approvals, and company-level control.">
+<meta property="og:url" content="https://21do.xyz">
+<meta property="og:site_name" content="21Do.XYZ">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Stop Hiring to Grow | 21Do.XYZ">
+<meta name="twitter:description" content="Grow without scaling your team. Replace manual execution with structured AI workflows, built-in approvals, and company-level control.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap&font-display=swap" rel="stylesheet">
+<style>
+/* ─── TOKENS ─── */
+:root {
+  --bg:        #f9fafb;
+  --surface:   #ffffff;
+  --border:    #e5e7eb;
+  --border-md: #d1d5db;
+  --t1:        #0d0f14;
+  --t2:        #4b5563;
+  --t3:        #9ca3af;
+  --blue:      #1d4ed8;
+  --blue-mid:  #2563eb;
+  --blue-lt:   #eff6ff;
+  --blue-bd:   #bfdbfe;
+  --green:     #15803d;
+  --green-lt:  #f0fdf4;
+  --green-bd:  #bbf7d0;
+  --red:       #b91c1c;
+  --red-lt:    #fef2f2;
+  --red-bd:    #fecaca;
+  --r:         8px;
+  --r-lg:      12px;
+  --ease:      cubic-bezier(.4,0,.2,1);
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:focus-visible{outline:2px solid var(--blue-mid);outline-offset:2px;border-radius:4px;}
+html{scroll-behavior:smooth;scroll-padding-top:72px;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--t1);font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased;}
+
+/* ─── LAYOUT ─── */
+.wrap{max-width:1100px;margin:0 auto;padding:0 40px;}
+section{padding:88px 0;}
+hr{border:none;border-top:1px solid var(--border);}
+
+/* ─── NAV ─── */
+nav{
+  position:sticky;top:0;z-index:900;
+  height:60px;
+  background:rgba(255,255,255,.92);
+  backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--border);
+  transition:box-shadow .2s;
+}
+nav.scrolled{box-shadow:0 2px 12px rgba(0,0,0,.06);}
+.nav-in{
+  max-width:1100px;margin:0 auto;padding:0 40px;
+  height:100%;display:flex;align-items:center;justify-content:space-between;gap:24px;
+}
+.logo{display:inline-flex;align-items:center;gap:0;text-decoration:none;}
+.logo-21{background:var(--blue);color:#fff;padding:3px 7px 3px 7px;border-radius:5px;font-size:13.5px;font-weight:800;letter-spacing:-.02em;line-height:1.35;}
+.logo-do{color:var(--t1);font-weight:800;font-size:15px;letter-spacing:-.04em;padding-left:5px;}
+.logo-xyz{color:var(--blue-mid);font-weight:700;font-size:15px;letter-spacing:-.03em;}
+.nav-links{display:flex;gap:24px;list-style:none;}
+.nav-links a{font-size:13px;font-weight:500;color:var(--t2);text-decoration:none;transition:color .15s;}
+.nav-links a:hover{color:var(--t1);}
+.nav-r{display:flex;gap:8px;align-items:center;}
+.lang-sw{display:flex;align-items:center;background:var(--bg);border:1px solid var(--border-md);border-radius:6px;overflow:hidden;flex-shrink:0;}
+.lang-btn{padding:5px 10px;font-size:12px;font-weight:700;letter-spacing:.03em;color:var(--t3);background:transparent;border:none;cursor:pointer;transition:all .15s;font-family:'Inter',sans-serif;}
+.lang-btn.active{background:var(--blue);color:#fff;}
+.lang-btn:hover:not(.active){color:var(--t1);background:var(--border);}
+/* LANG DROPDOWN */
+.lang-dd{position:relative;flex-shrink:0;}
+.lang-dd-btn{
+  display:flex;align-items:center;gap:6px;
+  padding:6px 10px;
+  font-size:12.5px;font-weight:600;font-family:'Inter',sans-serif;
+  color:var(--t2);background:var(--bg);
+  border:1px solid var(--border-md);border-radius:6px;
+  cursor:pointer;transition:all .15s;white-space:nowrap;
+  user-select:none;
+}
+.lang-dd-btn:hover{border-color:#9ca3af;color:var(--t1);}
+.lang-dd-btn svg{width:12px;height:12px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;transition:transform .18s;flex-shrink:0;}
+.lang-dd.open .lang-dd-btn svg{transform:rotate(180deg);}
+.lang-dd-flag{font-size:14px;line-height:1;}
+.lang-dd-menu{
+  position:absolute;top:calc(100% + 6px);right:0;
+  background:var(--surface);border:1px solid var(--border);border-radius:var(--r);
+  box-shadow:0 8px 24px rgba(0,0,0,.1),0 2px 6px rgba(0,0,0,.05);
+  min-width:140px;overflow:hidden;
+  opacity:0;transform:translateY(-6px) scale(.97);pointer-events:none;
+  transition:all .18s var(--ease);z-index:999;
+}
+.lang-dd.open .lang-dd-menu{opacity:1;transform:none;pointer-events:auto;}
+.lang-opt{
+  display:flex;align-items:center;gap:10px;
+  padding:9px 14px;font-size:13px;font-weight:500;
+  color:var(--t2);cursor:pointer;transition:background .12s;
+  border-bottom:1px solid var(--border);
+}
+.lang-opt:last-child{border-bottom:none;}
+.lang-opt:hover{background:var(--bg);color:var(--t1);}
+.lang-opt.active{color:var(--blue);font-weight:700;background:var(--blue-lt);}
+.lang-opt-flag{font-size:16px;line-height:1;}
+.lang-opt-name{flex:1;}
+.lang-opt-code{font-size:11px;color:var(--t3);font-weight:600;letter-spacing:.04em;}
+
+/* ─── BUTTONS ─── */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:6px;
+  font-family:'Inter',sans-serif;font-size:13px;font-weight:600;letter-spacing:-.01em;
+  border:none;border-radius:6px;padding:8px 16px;cursor:pointer;
+  text-decoration:none;white-space:nowrap;transition:all .15s var(--ease);
+}
+.btn-p{background:var(--blue);color:#fff;}
+.btn-p:hover{background:var(--blue-mid);box-shadow:0 4px 14px rgba(29,78,216,.28);transform:translateY(-1px);}
+.btn-p:active{transform:none;}
+.btn-s{background:var(--surface);color:var(--t2);border:1px solid var(--border-md);}
+.btn-s:hover{background:var(--bg);color:var(--t1);border-color:#9ca3af;}
+.btn-lg{padding:11px 24px;font-size:14px;border-radius:7px;}
+
+/* ─── EYEBROW ─── */
+.ew{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:11px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;
+  color:var(--blue-mid);margin-bottom:14px;
+}
+.ew::before{content:'';width:16px;height:1.5px;background:var(--blue-mid);flex-shrink:0;}
+
+/* ─── TYPE ─── */
+.t-hero{font-size:clamp(40px,5.2vw,66px);font-weight:800;line-height:1.06;letter-spacing:-.035em;color:var(--t1);}
+.t-section{font-size:clamp(26px,3.2vw,40px);font-weight:800;line-height:1.1;letter-spacing:-.03em;color:var(--t1);}
+.t-body{font-size:16px;line-height:1.72;color:var(--t2);font-weight:400;}
+.max-520{max-width:520px;}
+.max-560{max-width:560px;}
+
+/* ─── HERO ─── */
+#hero{
+  padding:76px 0 80px;
+  background:linear-gradient(160deg,#fff 60%,#f0f5ff 100%);
+  border-bottom:1px solid var(--border);
+  position:relative;overflow:hidden;
+}
+.hero-blob{
+  position:absolute;top:-160px;right:-100px;
+  width:700px;height:700px;border-radius:50%;
+  background:radial-gradient(ellipse at center,rgba(37,99,235,.06) 0%,transparent 68%);
+  pointer-events:none;
+}
+.hero-grid{display:grid;grid-template-columns:1fr 420px;gap:64px;align-items:center;}
+.hero-tag{
+  display:inline-flex;align-items:center;gap:6px;
+  padding:4px 10px 4px 6px;margin-bottom:22px;
+  background:var(--blue-lt);border:1px solid var(--blue-bd);border-radius:100px;
+  font-size:11.5px;font-weight:600;color:var(--blue);
+}
+.hero-tag-dot{
+  width:8px;height:8px;border-radius:50%;background:var(--blue);
+  flex-shrink:0;animation:pulse 2s ease-in-out infinite;
+}
+@keyframes pulse{
+  0%,100%{box-shadow:0 0 0 0 rgba(37,99,235,.4);}
+  50%{box-shadow:0 0 0 5px rgba(37,99,235,0);}
+}
+.hero-sub{font-size:15.5px;line-height:1.72;color:var(--t2);margin-top:18px;max-width:460px;}
+.hero-sep{height:1px;background:var(--border);margin:26px 0;max-width:460px;}
+.hero-stats{display:flex;gap:28px;}
+.stat-val{font-size:20px;font-weight:800;letter-spacing:-.03em;color:var(--t1);}
+.stat-lbl{font-size:11.5px;color:var(--t3);margin-top:1px;}
+.ctas{display:flex;align-items:center;gap:8px;margin-top:26px;flex-wrap:wrap;}
+.ctas-note{font-size:11.5px;color:var(--t3);margin-top:10px;}
+
+/* ─── MODEL CARD (hero right) ─── */
+.mc{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:var(--r-lg);
+  overflow:hidden;
+  box-shadow:0 8px 32px rgba(0,0,0,.07),0 2px 8px rgba(0,0,0,.04);
+}
+.mc-bar{
+  padding:10px 16px;
+  background:var(--bg);
+  border-bottom:1px solid var(--border);
+  display:flex;align-items:center;gap:10px;
+}
+.mc-dots{display:flex;gap:5px;}
+.mc-dot{width:9px;height:9px;border-radius:50%;}
+.mc-title{font-size:11px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--t3);margin-left:2px;}
+.mc-block{padding:16px 18px;border-bottom:1px solid var(--border);}
+.mc-block:last-child{border-bottom:none;}
+.mc-label{
+  display:flex;align-items:center;gap:6px;
+  font-size:10.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;
+  margin-bottom:12px;
+}
+.flow{display:flex;align-items:center;gap:6px;flex-wrap:wrap;}
+.chip{
+  font-size:12px;font-weight:500;padding:3px 9px;
+  border-radius:5px;border:1px solid var(--border);
+  background:var(--bg);color:var(--t2);white-space:nowrap;
+}
+.chip-r{background:var(--red-lt);color:var(--red);border-color:var(--red-bd);}
+.chip-g{background:var(--green-lt);color:var(--green);border-color:var(--green-bd);}
+.flow-arr{font-size:12px;color:var(--t3);line-height:1;}
+
+/* ─── SOCIAL PROOF BAR ─── */
+.proof-bar{
+  background:var(--surface);
+  border-bottom:1px solid var(--border);
+  padding:14px 0;
+}
+.proof-inner{
+  max-width:1100px;margin:0 auto;padding:0 40px;
+  display:flex;align-items:center;gap:32px;
+  font-size:12.5px;color:var(--t3);font-weight:500;
+}
+.proof-inner strong{color:var(--t2);font-weight:600;}
+.proof-sep{width:1px;height:14px;background:var(--border-md);flex-shrink:0;}
+
+/* ─── COST SECTION ─── */
+.cost-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:1px;background:var(--border);
+  border:1px solid var(--border);border-radius:var(--r-lg);
+  overflow:hidden;margin-top:40px;
+}
+.cost-cell{
+  background:var(--surface);padding:22px 22px;
+  transition:background .15s;
+}
+.cost-cell:hover{background:var(--bg);}
+.cost-num{
+  font-size:10px;font-weight:700;letter-spacing:.1em;
+  color:var(--t3);text-transform:uppercase;margin-bottom:12px;
+}
+.cost-name{font-size:13.5px;font-weight:700;color:var(--t1);margin-bottom:5px;}
+.cost-desc{font-size:12.5px;color:var(--t2);line-height:1.55;}
+.callout{
+  margin-top:32px;padding:18px 22px;
+  background:var(--blue-lt);border:1px solid var(--blue-bd);
+  border-left:3px solid var(--blue-mid);border-radius:var(--r);
+  font-size:14.5px;font-weight:500;color:var(--t1);line-height:1.55;
+}
+.callout-neutral{
+  margin-top:32px;padding:18px 22px;
+  background:var(--surface);border:1px solid var(--border);
+  border-left:3px solid var(--border-md);
+  border-radius:var(--r);
+  font-size:14px;font-weight:500;color:var(--t1);line-height:1.55;
+}
+
+/* ─── CALCULATOR ─── */
+.calc-layout{display:grid;grid-template-columns:1fr 320px;gap:48px;align-items:start;margin-top:44px;}
+.calc-fields{display:flex;flex-direction:column;gap:26px;}
+.f-label{
+  display:flex;justify-content:space-between;align-items:baseline;
+  font-size:12.5px;font-weight:600;color:var(--t1);margin-bottom:10px;
+}
+.f-val{font-size:13px;font-weight:700;color:var(--blue-mid);}
+input[type=range]{
+  width:100%;-webkit-appearance:none;height:3px;
+  background:var(--border-md);border-radius:2px;outline:none;cursor:pointer;
+}
+input[type=range]::-webkit-slider-thumb{
+  -webkit-appearance:none;width:15px;height:15px;border-radius:50%;
+  background:var(--blue);border:2px solid #fff;
+  box-shadow:0 0 0 1.5px var(--blue);cursor:pointer;
+  transition:transform .15s;
+}
+input[type=range]:hover::-webkit-slider-thumb{transform:scale(1.2);}
+.r-stack{display:flex;flex-direction:column;gap:10px;position:sticky;top:72px;}
+.r-card{
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:var(--r);padding:18px 20px;
+}
+.r-card.hi{
+  background:var(--blue);border-color:var(--blue);
+  box-shadow:0 4px 20px rgba(29,78,216,.22);
+}
+.r-lbl{font-size:10.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--t3);margin-bottom:4px;}
+.r-card.hi .r-lbl{color:rgba(255,255,255,.55);}
+.r-num{font-size:27px;font-weight:800;letter-spacing:-.03em;color:var(--t1);}
+.r-card.hi .r-num{color:#fff;}
+.r-sub{font-size:11px;color:var(--t3);margin-top:3px;}
+.r-card.hi .r-sub{color:rgba(255,255,255,.45);}
+.calc-note{
+  margin-top:10px;padding:11px 14px;
+  background:var(--bg);border:1px solid var(--border);border-radius:6px;
+  font-size:11.5px;color:var(--t3);line-height:1.5;
+}
+
+/* ─── COMPARE ─── */
+.cmp-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:40px;}
+.cmp-col{border:1px solid var(--border);border-radius:var(--r-lg);overflow:hidden;background:var(--surface);}
+.cmp-col.hi{border-color:var(--blue-bd);}
+.cmp-head{
+  padding:11px 18px;background:var(--bg);border-bottom:1px solid var(--border);
+  display:flex;align-items:center;gap:8px;
+  font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--t3);
+}
+.cmp-col.hi .cmp-head{background:var(--blue-lt);border-bottom-color:var(--blue-bd);color:var(--blue);}
+.sdot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
+.cmp-rows{padding:4px 0;}
+.cr{
+  display:flex;align-items:center;gap:10px;
+  padding:9px 18px;border-bottom:1px solid var(--border);
+  font-size:13.5px;color:var(--t2);
+}
+.cr:last-child{border-bottom:none;}
+.cmp-col.hi .cr{color:var(--t1);}
+.ci{width:15px;text-align:center;font-size:12px;flex-shrink:0;}
+
+/* ─── DIAGNOSIS ─── */
+.diag-box{
+  margin-top:32px;border:1px solid var(--border);
+  border-radius:var(--r-lg);overflow:hidden;background:var(--surface);
+}
+.di{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:13px 18px;border-bottom:1px solid var(--border);
+  cursor:pointer;transition:background .12s;gap:14px;user-select:none;
+}
+.di:last-child{border-bottom:none;}
+.di:hover{background:var(--bg);}
+.di.on{background:var(--blue-lt);}
+.di-q{font-size:13.5px;font-weight:400;color:var(--t1);flex:1;line-height:1.5;}
+.di.on .di-q{color:var(--blue);font-weight:500;}
+.ck{
+  width:18px;height:18px;border-radius:4px;border:1.5px solid var(--border-md);
+  background:var(--surface);display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;font-size:10px;font-weight:700;color:transparent;
+  transition:all .15s;
+}
+.di.on .ck{background:var(--blue);border-color:var(--blue);color:#fff;}
+.diag-out{
+  margin-top:12px;padding:14px 18px;
+  border:1px solid var(--border);border-radius:var(--r);
+  background:var(--surface);display:flex;gap:12px;align-items:flex-start;
+  min-height:64px;transition:all .2s;
+}
+.diag-icon{
+  width:30px;height:30px;border-radius:7px;
+  background:var(--bg);border:1px solid var(--border);
+  display:flex;align-items:center;justify-content:center;
+  font-size:13px;flex-shrink:0;
+}
+.diag-ttl{font-size:13px;font-weight:600;color:var(--t1);}
+.diag-stl{font-size:12px;color:var(--t2);margin-top:2px;line-height:1.5;}
+
+/* ─── FLOW TRACK ─── */
+.flow-track{
+  display:grid;grid-template-columns:repeat(6,1fr);
+  gap:1px;background:var(--border);
+  border:1px solid var(--border);border-radius:var(--r-lg);
+  overflow:hidden;margin-top:40px;
+}
+.fn{
+  background:var(--surface);padding:20px 16px;
+  border-right:1px solid var(--border);
+  transition:background .15s;position:relative;
+}
+.fn:last-child{border-right:none;}
+.fn:hover{background:var(--blue-lt);}
+.fn:hover .fn-n{color:var(--blue-mid);}
+.fn-n{font-size:10px;font-weight:700;letter-spacing:.1em;color:var(--t3);margin-bottom:8px;transition:color .15s;}
+.fn-t{font-size:13px;font-weight:700;color:var(--t1);margin-bottom:4px;}
+.fn-d{font-size:11.5px;color:var(--t2);line-height:1.5;}
+
+/* ─── CONTROL CARDS ─── */
+.ctrl-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:40px;}
+.cc{
+  background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);
+  padding:22px 20px;transition:box-shadow .15s,border-color .15s;
+  position:relative;overflow:hidden;
+}
+.cc::after{
+  content:'';position:absolute;top:0;left:0;right:0;height:2px;
+  background:var(--blue);transform:scaleX(0);transform-origin:left;
+  transition:transform .2s var(--ease);
+}
+.cc:hover{box-shadow:0 4px 16px rgba(0,0,0,.07);border-color:var(--blue-bd);}
+.cc:hover::after{transform:scaleX(1);}
+.cc-icon{
+  width:36px;height:36px;border-radius:8px;
+  background:var(--bg);border:1px solid var(--border);
+  display:flex;align-items:center;justify-content:center;
+  margin-bottom:14px;
+}
+/* SVG icons inside cc-icon */
+.cc-icon svg{width:16px;height:16px;stroke:var(--blue-mid);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;}
+.cc-title{font-size:13.5px;font-weight:700;color:var(--t1);margin-bottom:7px;}
+.cc-desc{font-size:12.5px;color:var(--t2);line-height:1.55;}
+
+/* ─── RESULT STRIP ─── */
+.rs-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:40px;}
+.rs{
+  background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);
+  padding:20px;transition:box-shadow .15s;
+}
+.rs:hover{box-shadow:0 2px 12px rgba(0,0,0,.06);}
+.rs-icon{
+  width:32px;height:32px;border-radius:7px;
+  background:var(--blue-lt);border:1px solid var(--blue-bd);
+  display:flex;align-items:center;justify-content:center;
+  margin-bottom:14px;
+}
+.rs-icon svg{width:15px;height:15px;stroke:var(--blue-mid);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;}
+.rs-t{font-size:13.5px;font-weight:700;color:var(--t1);margin-bottom:5px;}
+.rs-d{font-size:12.5px;color:var(--t2);line-height:1.55;}
+
+/* ─── EXPAND GRID ─── */
+.exp-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:40px;}
+.exp{
+  display:flex;gap:16px;align-items:flex-start;
+  background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);
+  padding:20px 22px;transition:border-color .15s;
+}
+.exp:hover{border-color:var(--blue-bd);box-shadow:0 2px 12px rgba(0,0,0,.05);}
+.exp-n{font-size:11px;font-weight:800;color:var(--blue-mid);letter-spacing:.04em;padding-top:2px;width:22px;flex-shrink:0;}
+.exp-t{font-size:13.5px;font-weight:700;color:var(--t1);margin-bottom:4px;}
+.exp-d{font-size:12.5px;color:var(--t2);line-height:1.5;}
+
+/* ─── FINAL CTA ─── */
+#finalcta{background:var(--t1);padding:88px 0;}
+#finalcta .ew{color:rgba(255,255,255,.35);}
+#finalcta .ew::before{background:rgba(255,255,255,.25);}
+#finalcta .t-section{color:#fff;}
+.q-split{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:32px auto 0;max-width:600px;}
+.q-box{padding:18px 20px;border-radius:var(--r);border:1px solid rgba(255,255,255,.1);}
+.q-box.old{background:rgba(255,255,255,.04);}
+.q-box.new{background:var(--blue-mid);border-color:var(--blue-mid);}
+.q-tag{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:8px;}
+.q-box.new .q-tag{color:rgba(255,255,255,.65);}
+.q-txt{font-size:14.5px;font-weight:500;line-height:1.45;color:rgba(255,255,255,.45);}
+.q-box.old .q-txt{text-decoration:line-through;}
+.q-box.new .q-txt{color:#fff;opacity:1;}
+.ctas-dark{display:flex;align-items:center;gap:8px;margin-top:28px;justify-content:center;flex-wrap:wrap;}
+.btn-dark-ghost{
+  background:rgba(255,255,255,.07);color:rgba(255,255,255,.7);
+  border:1px solid rgba(255,255,255,.14);border-radius:7px;
+  padding:11px 24px;font-size:14px;font-weight:600;font-family:'Inter',sans-serif;
+  text-decoration:none;display:inline-flex;align-items:center;gap:6px;
+  transition:all .15s;cursor:pointer;
+}
+.btn-dark-ghost:hover{background:rgba(255,255,255,.12);color:#fff;}
+
+/* ─── FAQ ─── */
+.faq-wrap{margin-top:40px;border:1px solid var(--border);border-radius:var(--r-lg);overflow:hidden;}
+.fi{border-bottom:1px solid var(--border);background:var(--surface);}
+.fi:last-child{border-bottom:none;}
+.fi-q{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:16px 22px;cursor:pointer;gap:16px;
+  font-size:13.5px;font-weight:500;color:var(--t1);
+  transition:background .12s;user-select:none;
+}
+.fi-q:hover{background:var(--bg);}
+.fi.open .fi-q{color:var(--blue);background:var(--blue-lt);}
+.fi-tog{
+  width:20px;height:20px;border-radius:50%;
+  border:1.5px solid var(--border-md);background:var(--surface);
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;font-size:14px;color:var(--t3);
+  transition:all .18s;line-height:1;
+}
+.fi.open .fi-tog{background:var(--blue);border-color:var(--blue);color:#fff;transform:rotate(45deg);}
+.fi-body{max-height:0;overflow:hidden;transition:max-height .28s ease;}
+.fi.open .fi-body{max-height:400px;}
+.fi-content{padding:0 22px 16px;font-size:13px;color:var(--t2);line-height:1.7;}
+
+/* ─── FOOTER ─── */
+
+
+
+
+
+
+
+
+
+/* ─── DEMO MODAL ─── */
+.modal-overlay{
+  position:fixed;inset:0;z-index:9999;
+  background:rgba(0,0,0,.5);
+  backdrop-filter:blur(4px);
+  display:flex;align-items:center;justify-content:center;
+  padding:20px;
+  opacity:0;pointer-events:none;
+  transition:opacity .2s var(--ease);
+}
+.modal-overlay.open{opacity:1;pointer-events:auto;}
+.modal-box{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:var(--r-lg);
+  width:100%;max-width:720px;
+  max-height:90vh;
+  overflow:hidden;
+  box-shadow:0 24px 64px rgba(0,0,0,.15),0 8px 24px rgba(0,0,0,.08);
+  transform:translateY(16px) scale(.98);
+  transition:transform .22s var(--ease);
+  display:flex;flex-direction:column;
+}
+.modal-overlay.open .modal-box{transform:none;}
+.modal-head{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:16px 22px;
+  border-bottom:1px solid var(--border);
+  flex-shrink:0;
+}
+.modal-title{font-size:14px;font-weight:700;color:var(--t1);}
+.modal-sub{font-size:12px;color:var(--t3);margin-top:2px;}
+.modal-close{
+  width:30px;height:30px;border-radius:50%;
+  border:1px solid var(--border);background:var(--bg);
+  display:flex;align-items:center;justify-content:center;
+  cursor:pointer;font-size:16px;color:var(--t3);
+  transition:all .15s;flex-shrink:0;
+}
+.modal-close:hover{background:var(--border);color:var(--t1);}
+.modal-body{flex:1;overflow:auto;}
+.modal-body iframe{
+  width:100%;height:660px;
+  border:none;display:block;
+}
+@media(max-width:640px){
+  .modal-box{max-height:95vh;border-radius:var(--r);}
+  .modal-body iframe{height:580px;}
+}
+
+/* ─── ENTERPRISE FOOTER ─── */
+.ent-footer{background:#0d0f14;color:#e5e7eb;padding:64px 0 0;border-top:1px solid #1f2937;}
+.ent-footer-grid{max-width:1100px;margin:0 auto;padding:0 40px 56px;display:grid;grid-template-columns:200px 1fr 1fr 1fr 1fr;gap:40px 28px;border-bottom:1px solid rgba(255,255,255,.07);}
+.ef-brand-name{font-size:15px;font-weight:800;letter-spacing:-.04em;color:#fff;margin-bottom:10px;}
+.ef-brand-name b{color:var(--blue-mid);}
+.ef-brand-desc{font-size:12.5px;line-height:1.65;color:#9ca3af;margin-top:8px;}
+.ef-brand-tagline{margin-top:14px;padding:10px 12px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:6px;font-size:11px;line-height:1.6;color:#6b7280;}
+.ef-col-title{font-size:10.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:#6b7280;margin-bottom:14px;}
+.ef-links{display:flex;flex-direction:column;gap:9px;}
+.ef-links a{font-size:13px;color:#9ca3af;text-decoration:none;transition:color .15s;line-height:1.5;}
+.ef-links a:hover{color:#fff;}
+.ef-info-block{margin-bottom:14px;}
+.ef-info-label{font-size:10px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:#6b7280;margin-bottom:4px;}
+.ef-info-val{font-size:12px;color:#9ca3af;line-height:1.65;}
+.ef-info-val strong{color:#d1d5db;font-weight:600;}
+.ef-security-list{display:flex;flex-direction:column;gap:7px;margin-top:4px;}
+.ef-security-item{display:flex;align-items:flex-start;gap:8px;font-size:11.5px;color:#9ca3af;line-height:1.5;}
+.ef-security-item::before{content:'';width:4px;height:4px;border-radius:50%;background:var(--blue-mid);flex-shrink:0;margin-top:5px;}
+.ef-security-note{margin-top:12px;padding:9px 12px;background:rgba(29,78,216,.07);border:1px solid rgba(29,78,216,.18);border-radius:6px;font-size:11px;color:#93c5fd;line-height:1.55;}
+.ef-payment-row{margin-bottom:10px;}
+.ef-payment-label{font-size:10px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:#6b7280;margin-bottom:3px;}
+.ef-payment-val{font-size:11.5px;color:#9ca3af;font-family:'Courier New',monospace;user-select:all;line-height:1.6;}
+.ef-payment-trust{margin-top:12px;padding:8px 10px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:5px;font-size:11px;color:#6b7280;line-height:1.5;}
+.ent-footer-bottom{max-width:1100px;margin:0 auto;padding:18px 40px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;}
+.ef-bottom-copy{font-size:12px;color:#4b5563;}
+.ef-bottom-meta{font-size:11.5px;color:#374151;font-style:italic;}
+@media(max-width:960px){.ent-footer-grid{grid-template-columns:1fr 1fr 1fr;}}
+@media(max-width:640px){.ent-footer-grid{grid-template-columns:1fr 1fr;padding:0 20px 40px;}.ent-footer-bottom{padding:16px 20px;flex-direction:column;align-items:flex-start;}}
+
+.float{position:fixed;bottom:22px;right:22px;z-index:800;opacity:0;transform:translateY(8px) scale(.97);pointer-events:none;transition:all .22s cubic-bezier(.34,1.56,.64,1);}
+.float.on{opacity:1;transform:none;pointer-events:auto;}
+.float .btn{box-shadow:0 8px 28px rgba(0,0,0,.14);font-size:13.5px;padding:11px 22px;}
+
+/* ─── ANIMATIONS ─── */
+@keyframes fu{from{opacity:0;transform:translateY(18px);}to{opacity:1;transform:translateY(0);}}
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .5s var(--ease),transform .5s var(--ease);}
+.reveal.visible{opacity:1;transform:none;}
+.hero-tag{animation:fu .45s ease both;}
+.t-hero{animation:fu .48s .04s ease both;}
+.hero-sub{animation:fu .48s .08s ease both;}
+.hero-sep,.hero-stats{animation:fu .48s .12s ease both;}
+.hero-ctas{animation:fu .48s .16s ease both;}
+.mc{animation:fu .5s .22s ease both;}
+
+/* ─── RESPONSIVE ─── */
+@media(max-width:960px){
+  .wrap{padding:0 24px;}
+  .hero-grid{grid-template-columns:1fr;gap:44px;}
+  .calc-layout{grid-template-columns:1fr;}
+  .r-stack{position:static;}
+  .cost-grid{grid-template-columns:repeat(2,1fr);}
+  .ctrl-grid{grid-template-columns:repeat(2,1fr);}
+  .rs-grid{grid-template-columns:repeat(2,1fr);}
+  .flow-track{grid-template-columns:repeat(3,1fr);}
+}
+@media(max-width:640px){
+  .wrap{padding:0 20px;}section{padding:64px 0;}
+  nav{padding:0;}
+  .nav-in{padding:0 20px;}
+  .nav-links{display:none;}
+  .nav-r .btn-s{display:none;}
+  .cost-grid{grid-template-columns:1fr;}
+  .cmp-grid{grid-template-columns:1fr;}
+  .ctrl-grid{grid-template-columns:1fr;}
+  .rs-grid{grid-template-columns:1fr 1fr;}
+  .exp-grid{grid-template-columns:1fr;}
+  .q-split{grid-template-columns:1fr;}
+  .flow-track{grid-template-columns:repeat(2,1fr);}
+  .foot-in{flex-direction:column;gap:8px;text-align:center;}
+  footer{padding:20px;}
+  .proof-inner{gap:16px;flex-wrap:wrap;}
+}
+</style>
+</head>
+<body>
+
+<!-- DEMO MODAL -->
+<div class="modal-overlay" id="demoModal" onclick="closeModal(event)">
+  <div class="modal-box">
+    <div class="modal-head">
+      <div>
+        <div class="modal-title" id="modalTitle">Book a demo</div>
+        <div class="modal-sub" id="modalSub">Pick a time that works for you</div>
+      </div>
+      <div class="modal-close" onclick="closeDemoModal()">✕</div>
+    </div>
+    <div class="modal-body">
+      <iframe id="calendlyFrame" src="https://calendly.com/woodsyisbest/30min?hide_gdpr_banner=1&background_color=ffffff&text_color=0d0f14&primary_color=1d4ed8" frameborder="0" allow="camera; microphone; payment" loading="lazy"></iframe>
+    </div>
+  </div>
+</div>
+
+<!-- FLOAT BTN -->
+<div class="float" id="floatBtn">
+  <a href="#" onclick="openDemoModal();ev(\'cta_book_demo_click\');return false;" data-i18n="nav_demo">Book a demo →</a>
+</div>
+
+<!-- NAV -->
+<nav id="mainNav">
+  <div class="nav-in">
+    <a href="#" class="logo"><span class="logo-21">21</span><span class="logo-do">Do</span><span class="logo-xyz">.XYZ</span></a>
+    <ul class="nav-links">
+      <li><a href="#how-it-works" data-i18n="nav_how">How it works</a></li>
+      <li><a href="#calculator" data-i18n="nav_calc">Calculator</a></li>
+      <li><a href="#diagnosis" data-i18n="nav_diag">Diagnosis</a></li>
+      <li><a href="#why-now" data-i18n="nav_why">Why now</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+    <div class="nav-r">
+      <div class="lang-dd" id="langDd">
+        <div class="lang-dd-btn" onclick="toggleLangDd()">
+          <span class="lang-dd-flag" id="langFlag">🇬🇧</span>
+          <span id="langLabel">EN</span>
+          <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="lang-dd-menu">
+          <div class="lang-opt active" onclick="setLang('en')" id="opt-en">
+            <span class="lang-opt-flag">🇬🇧</span>
+            <span class="lang-opt-name">English</span>
+            <span class="lang-opt-code">EN</span>
+          </div>
+          <div class="lang-opt" onclick="setLang('ru')" id="opt-ru">
+            <span class="lang-opt-flag">🇷🇺</span>
+            <span class="lang-opt-name">Русский</span>
+            <span class="lang-opt-code">RU</span>
+          </div>
+          <div class="lang-opt" onclick="setLang('es')" id="opt-es">
+            <span class="lang-opt-flag">🇪🇸</span>
+            <span class="lang-opt-name">Español</span>
+            <span class="lang-opt-code">ES</span>
+          </div>
+        </div>
+      </div>
+      <a href="#finalcta" class="btn btn-s" data-i18n="nav_demo">Book a demo</a>
+      <a href="#diagnosis" class="btn btn-p" data-i18n="nav_cta">See what you can replace</a>
+    </div>
+  </div>
+</nav>
+
+<!-- PROOF BAR -->
+<div class="proof-bar">
+  <div class="proof-inner">
+    <span data-i18n="proof1">For <strong>founder-led B2B companies</strong> with 5–50 employees</span>
+    <div class="proof-sep"></div>
+    <span data-i18n="proof2">Replace <strong>manual execution</strong> without replacing your team</span>
+    <div class="proof-sep"></div>
+    <span data-i18n="proof3">Start with <strong>one function</strong>, then expand across your company</span>
+  </div>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-blob"></div>
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <div class="hero-tag">
+          <span class="hero-tag-dot"></span>
+          <span data-i18n="hero_tag">New operating model · Not another AI tool</span>
+        </div>
+        <h1 class="t-hero" data-i18n="hero_h1">Stop hiring.<br>Start replacing work.</h1>
+        <p class="hero-sub" data-i18n="hero_sub">You don't need 2 more hires. You need to remove the work they would do.<br><br>Most companies scale like this: more revenue → more people → more cost. We change that: more revenue → same team → lower cost per output.</p>
+        <div class="hero-sep"></div>
+        <div class="hero-stats">
+          <div>
+            <div class="stat-val" data-i18n="stat1_v">5–50</div>
+            <div class="stat-lbl" data-i18n="stat1_l">employees, typical company</div>
+          </div>
+          <div>
+            <div class="stat-val" data-i18n="stat2_v">1 function</div>
+            <div class="stat-lbl" data-i18n="stat2_l">to start, expand from there</div>
+          </div>
+          <div>
+            <div class="stat-val" data-i18n="stat3_v">0 new hires</div>
+            <div class="stat-lbl" data-i18n="stat3_l">required to scale execution</div>
+          </div>
+        </div>
+        <div class="ctas hero-ctas">
+          <a href="#diagnosis" class="btn btn-p btn-lg" onclick="ev('hero_cta_click')" data-i18n="cta_replace">See what you can replace</a>
+          <a href="#calculator" class="btn btn-s btn-lg" onclick="ev('calc_cta_click')" data-i18n="cta_calc">Calculate your savings</a>
+        </div>
+        <p class="ctas-note" data-i18n="ctas_note">No commitment required · Start with a diagnosis</p>
+      </div>
+      <div>
+        <div class="mc">
+          <div class="mc-bar">
+            <div class="mc-dots">
+              <div class="mc-dot" style="background:#f87171;"></div>
+              <div class="mc-dot" style="background:#fbbf24;"></div>
+              <div class="mc-dot" style="background:#34d399;"></div>
+            </div>
+            <span class="mc-title" data-i18n="mc_title">Growth model comparison</span>
+          </div>
+          <div class="mc-block">
+            <div class="mc-label" style="color:#ef4444;">
+              <div style="width:7px;height:7px;border-radius:50%;background:#ef4444;flex-shrink:0;"></div>
+              <span data-i18n="mc_trad">Traditional growth</span>
+            </div>
+            <div class="flow">
+              <span class="chip">Revenue ↑</span><span class="flow-arr">→</span>
+              <span class="chip chip-r">Headcount ↑</span><span class="flow-arr">→</span>
+              <span class="chip chip-r">Cost ↑</span><span class="flow-arr">→</span>
+              <span class="chip chip-r">Control ↓</span>
+            </div>
+          </div>
+          <div class="mc-block">
+            <div class="mc-label" style="color:var(--blue-mid);">
+              <div style="width:7px;height:7px;border-radius:50%;background:var(--blue-mid);flex-shrink:0;"></div>
+              <span data-i18n="mc_new">System-led growth</span>
+            </div>
+            <div class="flow">
+              <span class="chip">Revenue ↑</span><span class="flow-arr">→</span>
+              <span class="chip chip-g">Structure ↑</span><span class="flow-arr">→</span>
+              <span class="chip chip-g">Execution ↑</span><span class="flow-arr">→</span>
+              <span class="chip chip-g">Cost/output ↓</span>
+            </div>
+          </div>
+          <div style="padding:14px 18px;background:var(--bg);border-top:1px solid var(--border);display:flex;align-items:center;gap:10px;">
+            <div style="width:6px;height:6px;border-radius:50%;background:var(--blue-mid);flex-shrink:0;"></div>
+            <span style="font-size:12px;color:var(--t2);font-weight:500;" data-i18n="mc_verdict">Same revenue growth. Significantly lower cost per unit of output.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr>
+
+<!-- MONEY ANCHOR -->
+<section id="money">
+  <div class="wrap">
+    <span class="ew" data-i18n="s_money_ew">The real cost of hiring</span>
+    <h2 class="t-section max-520" data-i18n="s_money_h">Every hire costs more than salary.</h2>
+    <p class="t-body max-560" style="margin-top:14px;" data-i18n="s_money_sub">You're not paying for people. You're paying for everything that comes with them.</p>
+    <div class="cost-grid">
+      <div class="cost-cell"><div class="cost-num">01</div><div class="cost-name" data-i18n="c1n">Salary</div><div class="cost-desc" data-i18n="c1d">The baseline cost, compounding every year without a proportional output increase.</div></div>
+      <div class="cost-cell"><div class="cost-num">02</div><div class="cost-name" data-i18n="c2n">Onboarding time</div><div class="cost-desc" data-i18n="c2d">3–6 months before a new hire reaches full productivity. The clock starts before they contribute.</div></div>
+      <div class="cost-cell"><div class="cost-num">03</div><div class="cost-name" data-i18n="c3n">Management overhead</div><div class="cost-desc" data-i18n="c3d">Every hire creates a new layer of coordination, direction, and review.</div></div>
+      <div class="cost-cell"><div class="cost-num">04</div><div class="cost-name" data-i18n="c4n">Process delays</div><div class="cost-desc" data-i18n="c4d">Handoffs, miscommunication, and approval gaps add latency to every workflow.</div></div>
+      <div class="cost-cell"><div class="cost-num">05</div><div class="cost-name" data-i18n="c5n">Execution variance</div><div class="cost-desc" data-i18n="c5d">Inconsistency is structural when output depends on individual judgment and habit.</div></div>
+      <div class="cost-cell"><div class="cost-num">06</div><div class="cost-name" data-i18n="c6n">People dependency</div><div class="cost-desc" data-i18n="c6d">Your business becomes a function of who shows up and who stays.</div></div>
+    </div>
+    <div class="callout" data-i18n="money_callout">You're not paying for people. You're paying for the work they do. And that work can be replaced.</div>
+  </div>
+</section>
+
+<hr>
+
+<!-- CALCULATOR -->
+<section id="calculator" style="background:var(--surface);">
+  <div class="wrap">
+    <span class="ew" data-i18n="s_calc_ew">Savings calculator</span>
+    <h2 class="t-section max-520" data-i18n="s_calc_h">How much are you spending on execution?</h2>
+    <p class="t-body max-560" style="margin-top:14px;" data-i18n="s_calc_sub">Estimate how much of your monthly operating cost is tied to manual execution work.</p>
+    <div class="calc-layout">
+      <div class="calc-fields">
+        <div>
+          <div class="f-label"><span data-i18n="fl_emp">Execution-focused employees</span> <span class="f-val" id="v-emp">8</span></div>
+          <input type="range" id="r-emp" min="1" max="50" value="8" oninput="calcUpdate()">
+        </div>
+        <div>
+          <div class="f-label"><span data-i18n="fl_sal">Average monthly cost per employee</span> <span class="f-val" id="v-sal">$3,000</span></div>
+          <input type="range" id="r-sal" min="1000" max="15000" step="100" value="3000" oninput="calcUpdate()">
+        </div>
+        <div>
+          <div class="f-label"><span data-i18n="fl_rep">% of repetitive / workflow-based work</span> <span class="f-val" id="v-rep">50%</span></div>
+          <input type="range" id="r-rep" min="10" max="90" step="5" value="50" oninput="calcUpdate()">
+        </div>
+        <div>
+          <div class="f-label"><span data-i18n="fl_ovh">Monthly management overhead per employee</span> <span class="f-val" id="v-ovh">$500</span></div>
+          <input type="range" id="r-ovh" min="0" max="3000" step="100" value="500" oninput="calcUpdate()">
+        </div>
+        <div class="calc-note" data-i18n="calc_note">These are estimates, not guarantees. Actual replaceability depends on your workflow structure and company readiness.</div>
+      </div>
+      <div class="r-stack">
+        <div class="r-card">
+          <div class="r-lbl" data-i18n="r1_l">Monthly execution cost</div>
+          <div class="r-num" id="r-total">$28,000</div>
+          <div class="r-sub" data-i18n="r1_s">Total team cost including overhead</div>
+        </div>
+        <div class="r-card hi">
+          <div class="r-lbl" data-i18n="r2_l">Workflow-based cost</div>
+          <div class="r-num" id="r-workflow">$14,000</div>
+          <div class="r-sub" data-i18n="r2_s">Estimated replaceable execution / month</div>
+        </div>
+        <div class="r-card">
+          <div class="r-lbl" data-i18n="r3_l">Annual execution spend</div>
+          <div class="r-num" id="r-annual">$168,000</div>
+          <div class="r-sub" data-i18n="r3_s">Where companies usually start restructuring</div>
+        </div>
+        <div class="ctas" style="margin-top:14px;">
+          <a href="#diagnosis" class="btn btn-p" onclick="ev('diag_start')" data-i18n="btn_diag">Run diagnosis</a>
+          <a href="#" onclick="openDemoModal();ev(\'cta_book_demo_click\');return false;" data-i18n="nav_demo">Book a demo</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr>
+
+<!-- REFRAME -->
+<section id="reframe">
+  <div class="wrap">
+    <span class="ew" data-i18n="s_reframe_ew">Two ways to grow</span>
+    <h2 class="t-section max-520" data-i18n="s_reframe_h">You don't need more people. You need less manual execution.</h2>
+    <p class="t-body max-560" style="margin-top:14px;" data-i18n="s_reframe_sub">There are only two ways to grow. Most companies default to the wrong one.</p>
+    <div class="cmp-grid">
+      <div class="cmp-col">
+        <div class="cmp-head"><div class="sdot" style="background:#ef4444;"></div><span data-i18n="trad_head">Traditional model</span></div>
+        <div class="cmp-rows">
+          <div class="cr"><span class="ci" style="color:#ef4444;">→</span><span data-i18n="trad1">Hire more people</span></div>
+          <div class="cr"><span class="ci" style="color:#ef4444;">→</span><span data-i18n="trad2">Manage more people</span></div>
+          <div class="cr"><span class="ci" style="color:#ef4444;">→</span><span data-i18n="trad3">Carry more cost</span></div>
+          <div class="cr"><span class="ci" style="color:#ef4444;">→</span><span data-i18n="trad4">Depend on who shows up</span></div>
+          <div class="cr"><span class="ci" style="color:#ef4444;">→</span><span data-i18n="trad5">Repeat every growth cycle</span></div>
+        </div>
+      </div>
+      <div class="cmp-col hi">
+        <div class="cmp-head"><div class="sdot" style="background:var(--blue-mid);"></div><span data-i18n="new_head">New model</span></div>
+        <div class="cmp-rows">
+          <div class="cr"><span class="ci" style="color:var(--blue-mid);">→</span><span data-i18n="new1">Structure the work</span></div>
+          <div class="cr"><span class="ci" style="color:var(--blue-mid);">→</span><span data-i18n="new2">Systemize execution</span></div>
+          <div class="cr"><span class="ci" style="color:var(--blue-mid);">→</span><span data-i18n="new3">Scale without headcount</span></div>
+          <div class="cr"><span class="ci" style="color:var(--blue-mid);">→</span><span data-i18n="new4">Add control, not cost</span></div>
+          <div class="cr"><span class="ci" style="color:var(--blue-mid);">→</span><span data-i18n="new5">Grow the structure, not payroll</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="callout-neutral" data-i18n="reframe_callout">Most companies keep hiring. The smarter ones remove the need.</div>
+  </div>
+</section>
+
+<hr>
+
+<!-- DIAGNOSIS -->
+<section id="diagnosis" style="background:var(--surface);">
+  <div class="wrap">
+    <span class="ew" data-i18n="s_diag_ew">Self-assessment</span>
+    <h2 class="t-section max-520" data-i18n="s_diag_h">What in your company is actually replaceable?</h2>
+    <p class="t-body max-560" style="margin-top:14px;" data-i18n="s_diag_sub">If your business runs on repeatable workflows, approvals, and recurring execution, you likely have more replaceable work than you think.</p>
+    <div class="diag-box">
+      <div class="di" onclick="dToggle(this)"><span class="di-q" data-i18n="dq1">Do you have repeatable workflows?</span><div class="ck">✓</div></div>
+      <div class="di" onclick="dToggle(this)"><span class="di-q" data-i18n="dq2">Do team members follow recurring steps?</span><div class="ck">✓</div></div>
+      <div class="di" onclick="dToggle(this)"><span class="di-q" data-i18n="dq3">Does work go through reviews or approvals?</span><div class="ck">✓</div></div>
+      <div class="di" onclick="dToggle(this)"><span class="di-q" data-i18n="dq4">Do people spend time on repetitive execution?</span><div class="ck">✓</div></div>
+      <div class="di" onclick="dToggle(this)"><span class="di-q" data-i18n="dq5">Does growth usually require more hiring?</span><div class="ck">✓</div></div>
+      <div class="di" onclick="dToggle(this)"><span class="di-q" data-i18n="dq6">Is work fragmented across chats, docs, and people?</span><div class="ck">✓</div></div>
+    </div>
+    <div class="diag-out" id="diagOut">
+      <div class="diag-icon">○</div>
+      <div><div class="diag-ttl" data-i18n="diag_empty">Select all that apply to your company</div><div class="diag-stl" data-i18n="diag_empty_s">Your diagnosis will appear here.</div></div>
+    </div>
+    <div class="ctas" style="margin-top:20px;">
+      <a href="#how-it-works" class="btn btn-p" data-i18n="btn_how">See how it works</a>
+      <a href="#" onclick="openDemoModal();ev(\'cta_book_demo_click\');return false;" data-i18n="nav_demo">Book a demo</a>
+    </div>
+  </div>
+</section>
+
+<hr>
+
+<!-- SOLUTION -->
+<section id="how-it-works">
+  <div class="wrap">
+    <span class="ew" data-i18n="s_how_ew">The system</span>
+    <h2 class="t-section max-520" data-i18n="s_how_h">Not an AI tool. A new way your company runs.</h2>
+    <p class="t-body max-560" style="margin-top:14px;" data-i18n="s_how_sub">We don't give you another assistant. We build a structured execution system for your company, from the ground up.</p>
+    <div class="flow-track">
+      <div class="fn"><div class="fn-n">01</div><div class="fn-t" data-i18n="fn1t">Context</div><div class="fn-d" data-i18n="fn1d">We onboard your company and understand how work actually happens.</div></div>
+      <div class="fn"><div class="fn-n">02</div><div class="fn-t" data-i18n="fn2t">Structure</div><div class="fn-d" data-i18n="fn2d">We map execution into structured, auditable workflows.</div></div>
+      <div class="fn"><div class="fn-n">03</div><div class="fn-t" data-i18n="fn3t">Workflows</div><div class="fn-d" data-i18n="fn3d">Each workflow gets defined steps, inputs, outputs, and owners.</div></div>
+      <div class="fn"><div class="fn-n">04</div><div class="fn-t" data-i18n="fn4t">Agents</div><div class="fn-d" data-i18n="fn4d">AI agents are assigned to execute within defined roles.</div></div>
+      <div class="fn"><div class="fn-n">05</div><div class="fn-t" data-i18n="fn5t">Rules</div><div class="fn-d" data-i18n="fn5d">Guardrails, approvals, and human checkpoints are built in.</div></div>
+      <div class="fn"><div class="fn-n">06</div><div class="fn-t" data-i18n="fn6t">Launch</div><div class="fn-d" data-i18n="fn6d">Work stops depending on people. It runs as a system.</div></div>
+    </div>
+    <div class="callout-neutral" data-i18n="how_callout">Work stops depending on people. It runs as a system.</div>
+  </div>
+</section>
+
+<hr>
+
+<!-- OUTCOME -->
+<section id="outcome" style="background:var(--surface);">
+  <div class="wrap">
+    <span class="ew" data-i18n="s_out_ew">What changes</span>
+    <h2 class="t-section max-520" data-i18n="s_out_h">What changes immediately.</h2>
+    <div class="cmp-grid" style="margin-top:40px;">
+      <div class="cmp-col">
+        <div class="cmp-head"><div class="sdot" style="background:#ef4444;"></div><span data-i18n="bef_head">Before</span></div>
+        <div class="cmp-rows">
+          <div class="cr"><span class="ci" style="color:#ef4444;">✗</span><span data-i18n="b1">Hire to grow</span></div>
+          <div class="cr"><span class="ci" style="color:#ef4444;">✗</span><span data-i18n="b2">More people = more output</span></div>
+          <div class="cr"><span class="ci" style="color:#ef4444;">✗</span><span data-i18n="b3">Rising payroll pressure</span></div>
+          <div class="cr"><span class="ci" style="color:#ef4444;">✗</span><span data-i18n="b4">People-dependent execution</span></div>
+          <div class="cr"><span class="ci" style="color:#ef4444;">✗</span><span data-i18n="b5">Fragmented operations</span></div>
+          <div class="cr"><span class="ci" style="color:#ef4444;">✗</span><span data-i18n="b6">Slow, costly scaling</span></div>
+        </div>
+      </div>
+      <div class="cmp-col hi">
+        <div class="cmp-head"><div class="sdot" style="background:var(--blue-mid);"></div><span data-i18n="aft_head">After</span></div>
+        <div class="cmp-rows">
+          <div class="cr"><span class="ci" style="color:var(--blue-mid);">✓</span><span data-i18n="a1">Scale without hiring</span></div>
+          <div class="cr"><span class="ci" style="color:var(--blue-mid);">✓</span><span data-i18n="a2">Same team = more output</span></div>
+          <div class="cr"><span class="ci" style="color:var(--blue-mid);">✓</span><span data-i18n="a3">Lower cost per output</span></div>
+          <div class="cr"><span class="ci" style="color:var(--blue-mid);">✓</span><span data-i18n="a4">System-driven execution</span></div>
+          <div class="cr"><span class="ci" style="color:var(--blue-mid);">✓</span><span data-i18n="a5">More structure and control</span></div>
+          <div class="cr"><span class="ci" style="color:var(--blue-mid);">✓</span><span data-i18n="a6">Scalable operating model</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr>
+
+<!-- CONTROL -->
+<section id="control">
+  <div class="wrap">
+    <span class="ew" data-i18n="s_ctrl_ew">Built-in oversight</span>
+    <h2 class="t-section max-520" data-i18n="s_ctrl_h">You don't lose control. You gain it.</h2>
+    <p class="t-body max-560" style="margin-top:14px;" data-i18n="s_ctrl_sub">Most automation removes visibility. Most AI tools remove predictability. This system does the opposite: every workflow is built around control layers.</p>
+    <div class="ctrl-grid">
+      <div class="cc">
+        <div class="cc-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+        </div>
+        <div class="cc-title" data-i18n="cc1t">Roles</div>
+        <div class="cc-desc" data-i18n="cc1d">Every task has a defined owner. Every agent has a defined scope. Nothing runs without assignment.</div>
+      </div>
+      <div class="cc">
+        <div class="cc-icon">
+          <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6M9 12h6M9 15h4"/></svg>
+        </div>
+        <div class="cc-title" data-i18n="cc2t">Rules</div>
+        <div class="cc-desc" data-i18n="cc2d">Explicit operating rules govern every workflow. Consistent, auditable, and non-negotiable by design.</div>
+      </div>
+      <div class="cc">
+        <div class="cc-icon">
+          <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg>
+        </div>
+        <div class="cc-title" data-i18n="cc3t">Approvals</div>
+        <div class="cc-desc" data-i18n="cc3d">Human approval gates are built into the system where they matter. Nothing critical runs unreviewed.</div>
+      </div>
+      <div class="cc">
+        <div class="cc-icon">
+          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        </div>
+        <div class="cc-title" data-i18n="cc4t">Review</div>
+        <div class="cc-desc" data-i18n="cc4d">Full visibility into execution history. Every action is logged, reviewable, and accountable.</div>
+      </div>
+    </div>
+    <div class="callout-neutral" data-i18n="ctrl_callout">Nothing runs uncontrolled. Nothing depends on who happens to be doing it.</div>
+  </div>
+</section>
+
+<hr>
+
+<!-- WHY NOW -->
+<section id="why-now" style="background:var(--surface);">
+  <div class="wrap">
+    <span class="ew" data-i18n="s_why_ew">The shift</span>
+    <h2 class="t-section max-520" data-i18n="s_why_h">Some companies are already making this shift.</h2>
+    <p class="t-body max-560" style="margin-top:14px;" data-i18n="s_why_sub">The next operating advantage isn't better prompts. It's lower dependence on headcount. Early adopters are restructuring execution now.</p>
+    <div class="rs-grid">
+      <div class="rs">
+        <div class="rs-icon">
+          <svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+        </div>
+        <div class="rs-t" data-i18n="rs1t">Faster execution</div>
+        <div class="rs-d" data-i18n="rs1d">Structured workflows eliminate handoff delays and coordination overhead.</div>
+      </div>
+      <div class="rs">
+        <div class="rs-icon">
+          <svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+        </div>
+        <div class="rs-t" data-i18n="rs2t">Lower operating cost</div>
+        <div class="rs-d" data-i18n="rs2d">Same output at a lower cost per unit when execution runs as a system.</div>
+      </div>
+      <div class="rs">
+        <div class="rs-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div class="rs-t" data-i18n="rs3t">Better control</div>
+        <div class="rs-d" data-i18n="rs3d">Full visibility into execution with built-in rules, roles, and approval layers.</div>
+      </div>
+      <div class="rs">
+        <div class="rs-icon">
+          <svg viewBox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+        </div>
+        <div class="rs-t" data-i18n="rs4t">More room to grow</div>
+        <div class="rs-d" data-i18n="rs4d">When execution doesn't require headcount, growth becomes a structure problem, not a hiring problem.</div>
+      </div>
+    </div>
+    <div class="callout-neutral" data-i18n="why_callout">This is not just an efficiency upgrade. It's a competitive advantage.</div>
+  </div>
+</section>
+
+<hr>
+
+<!-- EXPANSION -->
+<section id="expansion">
+  <div class="wrap">
+    <span class="ew" data-i18n="s_exp_ew">Growth path</span>
+    <h2 class="t-section max-520" data-i18n="s_exp_h">Start with one function. Expand across the company.</h2>
+    <p class="t-body max-560" style="margin-top:14px;" data-i18n="s_exp_sub">You don't replace everything at once. Most companies start with one operational function and expand from there.</p>
+    <div class="exp-grid">
+      <div class="exp"><div class="exp-n">01</div><div><div class="exp-t" data-i18n="ex1t">Outbound & sales workflows</div><div class="exp-d" data-i18n="ex1d">Lead generation, qualification, follow-up sequences, and pipeline management.</div></div></div>
+      <div class="exp"><div class="exp-n">02</div><div><div class="exp-t" data-i18n="ex2t">Content production</div><div class="exp-d" data-i18n="ex2d">Proposals, reports, marketing assets, and client communications.</div></div></div>
+      <div class="exp"><div class="exp-n">03</div><div><div class="exp-t" data-i18n="ex3t">Internal operations</div><div class="exp-d" data-i18n="ex3d">Approvals, coordination, status tracking, and internal reporting.</div></div></div>
+      <div class="exp"><div class="exp-n">04</div><div><div class="exp-t" data-i18n="ex4t">Client delivery</div><div class="exp-d" data-i18n="ex4d">Onboarding workflows, service delivery, and quality control processes.</div></div></div>
+    </div>
+    <div class="callout-neutral" data-i18n="exp_callout">One system. Expanding across your business.</div>
+  </div>
+</section>
+
+<hr>
+
+<!-- FINAL CTA -->
+<section id="finalcta">
+  <div class="wrap" style="text-align:center;">
+    <span class="ew" data-i18n="s_cta_ew">Before your next hire</span>
+    <h2 class="t-section" style="max-width:520px;margin:0 auto;color:#fff;" data-i18n="s_cta_h">Ask a better question.</h2>
+    <div class="q-split">
+      <div class="q-box old"><div class="q-tag" data-i18n="q_old_tag">Old question</div><div class="q-txt" data-i18n="q_old_txt">"Who do we need to hire next?"</div></div>
+      <div class="q-box new"><div class="q-tag" data-i18n="q_new_tag">Better question</div><div class="q-txt" data-i18n="q_new_txt">"What work should no longer require a hire?"</div></div>
+    </div>
+    <div class="ctas-dark">
+      <a href="#diagnosis" class="btn-dark-ghost" onclick="ev('diag_start')" data-i18n="btn_run_diag">Run diagnosis</a>
+      <a href="/cdn-cgi/l/email-protection#b5d1d0d8daf58784d1da9bcdcccf" class="btn btn-p btn-lg" onclick="ev('cta_book_demo_click')" data-i18n="btn_book">Book a demo →</a>
+    </div>
+  </div>
+</section>
+
+<hr>
+
+<!-- FAQ -->
+<section id="faq" style="background:var(--surface);">
+  <div class="wrap">
+    <span class="ew" data-i18n="s_faq_ew">Common questions</span>
+    <h2 class="t-section max-520">FAQ</h2>
+    <div class="faq-wrap">
+      <div class="fi"><div class="fi-q" onclick="faqT(this)"><span data-i18n="fq1">Is this another AI tool?</span><div class="fi-tog">+</div></div><div class="fi-body"><div class="fi-content" data-i18n="fa1">No. This is a structured execution system for your company. We don't give you prompts, assistants, or chatbots. We build a system where your company's work runs through defined workflows, roles, rules, and agents.</div></div></div>
+      <div class="fi"><div class="fi-q" onclick="faqT(this)"><span data-i18n="fq2">Will this replace my entire team?</span><div class="fi-tog">+</div></div><div class="fi-body"><div class="fi-content" data-i18n="fa2">No. It replaces parts of the work your team currently does manually. Your team focuses on decisions, relationships, and strategy. The system handles structured, repetitive execution.</div></div></div>
+      <div class="fi"><div class="fi-q" onclick="faqT(this)"><span data-i18n="fq3">Do we lose control over execution?</span><div class="fi-tog">+</div></div><div class="fi-body"><div class="fi-content" data-i18n="fa3">No. Rules, approvals, and checkpoints are built into the system by design. You get more visibility and control than you have with manual, people-dependent processes.</div></div></div>
+      <div class="fi"><div class="fi-q" onclick="faqT(this)"><span data-i18n="fq4">Do we need to rebuild our entire business?</span><div class="fi-tog">+</div></div><div class="fi-body"><div class="fi-content" data-i18n="fa4">No. The system structures what already exists. We start with one function, build the workflow, and expand from there. You don't need to restructure anything before we begin.</div></div></div>
+      <div class="fi"><div class="fi-q" onclick="faqT(this)"><span data-i18n="fq5">Is this automation?</span><div class="fi-tog">+</div></div><div class="fi-body"><div class="fi-content" data-i18n="fa5">Not in the traditional sense. This is workflow execution with role-based AI, control layers, and human oversight, closer to a structured operating system than a simple automation flow.</div></div></div>
+      <div class="fi"><div class="fi-q" onclick="faqT(this)"><span data-i18n="fq6">Where do companies usually start?</span><div class="fi-tog">+</div></div><div class="fi-body"><div class="fi-content" data-i18n="fa6">Most begin with one operational function: outbound, internal operations, or content production. We map what's happening, structure it, build the first workflow, then expand from there.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<footer class="ent-footer">
+  <div class="ent-footer-grid">
+
+    <!-- BRAND -->
+    <div>
+      <div class="ef-brand-name"><span class="logo-21">21</span><b>Do</b><span style="color:var(--blue-mid);font-weight:700;">.XYZ</span></div>
+      <div class="ef-brand-desc">Company-first execution system.<br>Replace manual work. Scale without hiring.</div>
+      <div class="ef-brand-tagline">Structured workflows · Role-based execution · Built-in approvals</div>
+    </div>
+
+    <!-- PRODUCT -->
+    <div>
+      <div class="ef-col-title" data-i18n="nav_how_title">Product</div>
+      <div class="ef-links">
+        <a href="#how-it-works" data-i18n="nav_how">How it works</a>
+        <a href="#calculator" data-i18n="nav_calc">Calculator</a>
+        <a href="#diagnosis" data-i18n="nav_diag">Diagnosis</a>
+        <a href="#why-now" data-i18n="nav_why">Why now</a>
+        <a href="#faq">FAQ</a>
+      </div>
+    </div>
+
+    <!-- COMPANY -->
+    <div>
+      <div class="ef-col-title">Company</div>
+      <div class="ef-links">
+        <a href="#" data-i18n="footer_about">About</a>
+        <a href="#" data-i18n="footer_contact">Contact</a>
+        <a href="#" onclick="openDemoModal();return false;" data-i18n="nav_demo">Book a demo</a>
+        <a href="#" data-i18n="footer_privacy">Privacy Policy</a>
+        <a href="#" data-i18n="footer_terms">Terms of Service</a>
+        <a href="#" data-i18n="footer_nda">NDA</a>
+      </div>
+    </div>
+
+    <!-- LEGAL -->
+    <div>
+      <div class="ef-col-title" data-i18n="footer_legal_title">Company Information</div>
+      <div class="ef-info-block">
+        <div class="ef-info-val"><strong>Sellrise Limited</strong></div>
+        <div class="ef-info-val" style="margin-top:4px;" data-i18n="footer_reg">Business Registration (HK): 78104416</div>
+      </div>
+      <div class="ef-info-block">
+        <div class="ef-info-label" data-i18n="footer_address_label">Registered Address</div>
+        <div class="ef-info-val">Unit 1603, 16/F, The L. Plaza<br>367–375 Queen's Road Central<br>Sheung Wan, Hong Kong</div>
+      </div>
+      <div class="ef-info-block">
+        <div class="ef-info-label" data-i18n="footer_director_label">Director</div>
+        <div class="ef-info-val"><strong>Bolonikhin Ivan</strong></div>
+      </div>
+    </div>
+
+    <!-- SECURITY + PAYMENTS -->
+    <div>
+      <div class="ef-col-title" data-i18n="footer_security_title">Security & Control</div>
+      <div class="ef-security-list">
+        <div class="ef-security-item" data-i18n="footer_s1">Role-based execution, no anonymous actions</div>
+        <div class="ef-security-item" data-i18n="footer_s2">Approval layers for critical outputs</div>
+        <div class="ef-security-item" data-i18n="footer_s3">Human-in-the-loop checkpoints</div>
+        <div class="ef-security-item" data-i18n="footer_s4">Your data remains under your control</div>
+        <div class="ef-security-item" data-i18n="footer_s5">No uncontrolled automation</div>
+      </div>
+      <div class="ef-security-note" data-i18n="footer_security_note">Operations remain auditable, controlled, and reviewable at all times.</div>
+    </div>
+
+  </div>
+  <div class="ent-footer-bottom">
+    <span class="ef-bottom-copy">© 2025 Sellrise Limited · All rights reserved</span>
+    <span class="ef-bottom-meta" data-i18n="footer_meta">Built for founder-led companies scaling operations without increasing headcount.</span>
+  </div>
+</footer>
+
+<script>
+const $=id=>document.getElementById(id);
+const fmt=n=>'$'+Math.round(n).toLocaleString();
+
+/* ── TRANSLATIONS ── */
+const T={
+  en:{
+    nav_how:'How it works', nav_calc:'Calculator', nav_diag:'Diagnosis',
+    nav_why:'Why now', nav_demo:'Book a demo', nav_cta:'See what you can replace',
+    proof1:'For <strong>founder-led B2B companies</strong> with 5–50 employees',
+    proof2:'Replace <strong>manual execution</strong> without replacing your team',
+    proof3:'Start with <strong>one function</strong>, then expand across your company',
+    hero_tag:'New operating model · Not another AI tool',
+    hero_h1:'Stop hiring.<br>Start replacing work.',
+    hero_sub:'You don\'t need 2 more hires. You need to remove the work they would do.<br><br>Most companies scale like this: more revenue → more people → more cost. We change that: more revenue → same team → lower cost per output.',
+    stat1_v:'5–50', stat1_l:'employees, typical company',
+    stat2_v:'1 function', stat2_l:'to start, expand from there',
+    stat3_v:'0 new hires', stat3_l:'required to scale execution',
+    cta_replace:'See what you can replace', cta_calc:'Calculate your savings',
+    ctas_note:'No commitment required · Start with a diagnosis',
+    mc_title:'Growth model comparison',
+    mc_trad:'Traditional growth', mc_new:'System-led growth',
+    mc_verdict:'Same revenue growth. Significantly lower cost per unit of output.',
+    s_money_ew:'The real cost of hiring',
+    s_money_h:'Every hire costs more than salary.',
+    s_money_sub:'You\'re not paying for people. You\'re paying for everything that comes with them.',
+    c1n:'Salary',c1d:'The baseline cost, compounding every year without a proportional output increase.',
+    c2n:'Onboarding time',c2d:'3–6 months before a new hire reaches full productivity. The clock starts before they contribute.',
+    c3n:'Management overhead',c3d:'Every hire creates a new layer of coordination, direction, and review.',
+    c4n:'Process delays',c4d:'Handoffs, miscommunication, and approval gaps add latency to every workflow.',
+    c5n:'Execution variance',c5d:'Inconsistency is structural when output depends on individual judgment and habit.',
+    c6n:'People dependency',c6d:'Your business becomes a function of who shows up and who stays.',
+    money_callout:'You\'re not paying for people. You\'re paying for the work they do. And that work can be replaced.',
+    s_calc_ew:'Savings calculator',
+    s_calc_h:'How much are you spending on execution?',
+    s_calc_sub:'Estimate how much of your monthly operating cost is tied to manual execution work.',
+    fl_emp:'Execution-focused employees', fl_sal:'Average monthly cost per employee',
+    fl_rep:'% of repetitive / workflow-based work', fl_ovh:'Monthly management overhead per employee',
+    calc_note:'These are estimates, not guarantees. Actual replaceability depends on your workflow structure and company readiness.',
+    r1_l:'Monthly execution cost', r1_s:'Total team cost including overhead',
+    r2_l:'Workflow-based cost', r2_s:'Estimated replaceable execution / month',
+    r3_l:'Annual execution spend', r3_s:'Where companies usually start restructuring',
+    btn_diag:'Run diagnosis',
+    s_reframe_ew:'Two ways to grow',
+    s_reframe_h:'You don\'t need more people. You need less manual execution.',
+    s_reframe_sub:'There are only two ways to grow. Most companies default to the wrong one.',
+    trad_head:'Traditional model', new_head:'New model',
+    trad1:'Hire more people',trad2:'Manage more people',trad3:'Carry more cost',trad4:'Depend on who shows up',trad5:'Repeat every growth cycle',
+    new1:'Structure the work',new2:'Systemize execution',new3:'Scale without headcount',new4:'Add control, not cost',new5:'Grow the structure, not payroll',
+    reframe_callout:'Most companies keep hiring. The smarter ones remove the need.',
+    s_diag_ew:'Self-assessment',
+    s_diag_h:'What in your company is actually replaceable?',
+    s_diag_sub:'If your business runs on repeatable workflows, approvals, and recurring execution, you likely have more replaceable work than you think.',
+    dq1:'Do you have repeatable workflows?',dq2:'Do team members follow recurring steps?',
+    dq3:'Does work go through reviews or approvals?',dq4:'Do people spend time on repetitive execution?',
+    dq5:'Does growth usually require more hiring?',dq6:'Is work fragmented across chats, docs, and people?',
+    diag_empty:'Select all that apply to your company', diag_empty_s:'Your diagnosis will appear here.',
+    diag_hi:'You likely have a meaningful amount of replaceable execution.',diag_hi_s:'Strong signal. Your workflows are structured enough to systemize.',
+    diag_mid:'You likely have replaceable workflows, but they need structure first.',diag_mid_s:'Good foundation. Some workflows are ready, others need more definition.',
+    diag_lo:'You may not be ready for execution replacement yet.',diag_lo_s:'Your workflows may need more structure before systemizing.',
+    btn_how:'See how it works',
+    s_how_ew:'The system',
+    s_how_h:'Not an AI tool. A new way your company runs.',
+    s_how_sub:'We don\'t give you another assistant. We build a structured execution system for your company, from the ground up.',
+    fn1t:'Context',fn1d:'We onboard your company and understand how work actually happens.',
+    fn2t:'Structure',fn2d:'We map execution into structured, auditable workflows.',
+    fn3t:'Workflows',fn3d:'Each workflow gets defined steps, inputs, outputs, and owners.',
+    fn4t:'Agents',fn4d:'AI agents are assigned to execute within defined roles.',
+    fn5t:'Rules',fn5d:'Guardrails, approvals, and human checkpoints are built in.',
+    fn6t:'Launch',fn6d:'Work stops depending on people. It runs as a system.',
+    how_callout:'Work stops depending on people. It runs as a system.',
+    s_out_ew:'What changes', s_out_h:'What changes immediately.',
+    bef_head:'Before', aft_head:'After',
+    b1:'Hire to grow',b2:'More people = more output',b3:'Rising payroll pressure',b4:'People-dependent execution',b5:'Fragmented operations',b6:'Slow, costly scaling',
+    a1:'Scale without hiring',a2:'Same team = more output',a3:'Lower cost per output',a4:'System-driven execution',a5:'More structure and control',a6:'Scalable operating model',
+    s_ctrl_ew:'Built-in oversight',
+    s_ctrl_h:'You don\'t lose control. You gain it.',
+    s_ctrl_sub:'Most automation removes visibility. Most AI tools remove predictability. This system does the opposite: every workflow is built around control layers.',
+    cc1t:'Roles',cc1d:'Every task has a defined owner. Every agent has a defined scope. Nothing runs without assignment.',
+    cc2t:'Rules',cc2d:'Explicit operating rules govern every workflow. Consistent, auditable, and non-negotiable by design.',
+    cc3t:'Approvals',cc3d:'Human approval gates are built into the system where they matter. Nothing critical runs unreviewed.',
+    cc4t:'Review',cc4d:'Full visibility into execution history. Every action is logged, reviewable, and accountable.',
+    ctrl_callout:'Nothing runs uncontrolled. Nothing depends on who happens to be doing it.',
+    s_why_ew:'The shift',
+    s_why_h:'Some companies are already making this shift.',
+    s_why_sub:'The next operating advantage isn\'t better prompts. It\'s lower dependence on headcount. Early adopters are restructuring execution now.',
+    rs1t:'Faster execution',rs1d:'Structured workflows eliminate handoff delays and coordination overhead.',
+    rs2t:'Lower operating cost',rs2d:'Same output at a lower cost per unit when execution runs as a system.',
+    rs3t:'Better control',rs3d:'Full visibility into execution with built-in rules, roles, and approval layers.',
+    rs4t:'More room to grow',rs4d:'When execution doesn\'t require headcount, growth becomes a structure problem, not a hiring problem.',
+    why_callout:'This is not just an efficiency upgrade. It\'s a competitive advantage.',
+    s_exp_ew:'Growth path',
+    s_exp_h:'Start with one function. Expand across the company.',
+    s_exp_sub:'You don\'t replace everything at once. Most companies start with one part of their operations.',
+    ex1t:'Outbound & sales workflows',ex1d:'Lead generation, qualification, follow-up sequences, and pipeline management.',
+    ex2t:'Content production',ex2d:'Proposals, reports, marketing assets, and client communications.',
+    ex3t:'Internal operations',ex3d:'Approvals, coordination, status tracking, and internal reporting.',
+    ex4t:'Client delivery',ex4d:'Onboarding workflows, service delivery, and quality control processes.',
+    exp_callout:'One system. Expanding across your business.',
+    s_cta_ew:'Before your next hire',
+    s_cta_h:'Ask a better question.',
+    q_old_tag:'Old question', q_old_txt:'"Who do we need to hire next?"',
+    q_new_tag:'Better question', q_new_txt:'"What work should no longer require a hire?"',
+    btn_run_diag:'Run diagnosis', btn_book:'Book a demo →',
+    s_faq_ew:'Common questions',
+    fq1:'Is this another AI tool?',fa1:'No. This is a structured execution system for your company. We don\'t give you prompts, assistants, or chatbots. We build a system where your company\'s work runs through defined workflows, roles, rules, and agents.',
+    fq2:'Will this replace my entire team?',fa2:'No. It replaces parts of the work your team currently does manually. Your team focuses on decisions, relationships, and strategy. The system handles structured, repetitive execution.',
+    fq3:'Do we lose control over execution?',fa3:'No. Rules, approvals, and checkpoints are built into the system by design. You get more visibility and control than you have with manual, people-dependent processes.',
+    fq4:'Do we need to rebuild our entire business?',fa4:'No. The system structures what already exists. We start with one function, build the workflow, and expand from there. You don\'t need to restructure anything before we begin.',
+    fq5:'Is this automation?',fa5:'Not in the traditional sense. This is workflow execution with role-based AI, control layers, and human oversight, closer to a structured operating system than a simple automation flow.',
+    fq6:'Where do companies usually start?',fa6:'Most begin with one operational function: outbound, internal operations, or content production. We map what\'s happening, structure it, build the first workflow, then expand from there.',
+
+    footer_about:'About', footer_contact:'Contact',
+    footer_privacy:'Privacy Policy', footer_terms:'Terms of Service', footer_nda:'NDA',
+    footer_legal_title:'Company Information',
+    footer_reg:'Business Registration (HK): 78104416',
+    footer_address_label:'Registered Address',
+    footer_director_label:'Director',
+    footer_security_title:'Security & Control',
+    footer_s1:'Role-based execution, no anonymous actions',
+    footer_s2:'Approval layers for critical outputs',
+    footer_s3:'Human-in-the-loop checkpoints',
+    footer_s4:'Your data remains under your control',
+    footer_s5:'No uncontrolled automation',
+    footer_security_note:'Operations remain auditable, controlled, and reviewable at all times.',
+    footer_payment_title:'USD Payment Details',
+    footer_acct_name:'Account Name', footer_acct_num:'Account Number',
+    footer_routing:'Routing (ACH & Wire)', footer_bank:'Bank',
+    footer_payment_trust:'Payments processed via regulated financial infrastructure partners.',
+    footer_meta:'Built for founder-led companies scaling operations without increasing headcount.',
+    nav_how_title:'Product',
+    footer_copy:'© 2025 Sellrise Limited · All rights reserved'
+  },
+  ru:{
+    nav_how:'Как это работает', nav_calc:'Калькулятор', nav_diag:'Диагностика',
+    nav_why:'Почему сейчас', nav_demo:'Записаться на демо', nav_cta:'Что можно заменить',
+    proof1:'Для <strong>компаний B2B под руководством основателей</strong> с 5–50 сотрудниками',
+    proof2:'Замените <strong>ручное исполнение</strong> без замены команды',
+    proof3:'Начните с <strong>одной функции</strong>, затем расширяйте по всей компании',
+    hero_tag:'Новая операционная модель · Не очередной AI-инструмент',
+    hero_h1:'Перестаньте нанимать.<br>Начните заменять работу.',
+    hero_sub:'Вам не нужны 2 новых сотрудника. Вам нужно убрать работу, которую они бы делали.<br><br>Большинство компаний масштабируются так: больше выручки → больше людей → больше затрат. Мы меняем это: больше выручки → та же команда → меньше затрат на единицу результата.',
+    stat1_v:'5–50', stat1_l:'сотрудников, типичная компания',
+    stat2_v:'1 функция', stat2_l:'для старта, дальше расширяем',
+    stat3_v:'0 новых найма', stat3_l:'для масштабирования исполнения',
+    cta_replace:'Что можно заменить', cta_calc:'Рассчитать экономию',
+    ctas_note:'Без обязательств · Начните с диагностики',
+    mc_title:'Сравнение моделей роста',
+    mc_trad:'Традиционный рост', mc_new:'Рост через систему',
+    mc_verdict:'Тот же рост выручки. Значительно меньше затрат на единицу результата.',
+    s_money_ew:'Реальная стоимость найма',
+    s_money_h:'Каждый найм стоит дороже, чем зарплата.',
+    s_money_sub:'Вы платите не только за людей. Вы платите за всё, что с ними приходит.',
+    c1n:'Зарплата',c1d:'Базовые затраты, которые растут каждый год без пропорционального роста результата.',
+    c2n:'Время онбординга',c2d:'3–6 месяцев до выхода на полную продуктивность. Счётчик идёт до первого результата.',
+    c3n:'Управленческие расходы',c3d:'Каждый новый сотрудник создаёт новый слой координации, контроля и ревью.',
+    c4n:'Задержки процессов',c4d:'Передачи задач, недопонимание и пробелы в согласованиях добавляют латентность в каждый воркфлоу.',
+    c5n:'Вариативность исполнения',c5d:'Непоследовательность неизбежна, когда результат зависит от суждения конкретного человека.',
+    c6n:'Зависимость от людей',c6d:'Ваш бизнес становится функцией от того, кто сегодня вышел на работу и остаётся ли он вообще.',
+    money_callout:'Вы платите не за людей. Вы платите за работу, которую они делают. А эту работу можно заменить.',
+    s_calc_ew:'Калькулятор экономии',
+    s_calc_h:'Сколько вы тратите на исполнение?',
+    s_calc_sub:'Оцените, какая часть ваших ежемесячных операционных затрат связана с ручным исполнением.',
+    fl_emp:'Сотрудники, занятые исполнением', fl_sal:'Средние ежемесячные затраты на сотрудника',
+    fl_rep:'% повторяющейся / процессной работы', fl_ovh:'Ежемесячные управленческие расходы на сотрудника',
+    calc_note:'Это оценки, а не гарантии. Реальный потенциал замены зависит от структуры ваших воркфлоу.',
+    r1_l:'Ежемесячные затраты на исполнение', r1_s:'Общие затраты команды с учётом overhead',
+    r2_l:'Затраты на процессную работу', r2_s:'Оценочные заменяемые расходы в месяц',
+    r3_l:'Годовые затраты на исполнение', r3_s:'С чего обычно начинают реструктуризацию',
+    btn_diag:'Запустить диагностику',
+    s_reframe_ew:'Два способа расти',
+    s_reframe_h:'Вам не нужно больше людей. Вам нужно меньше ручного исполнения.',
+    s_reframe_sub:'Есть только два способа расти. Большинство компаний по умолчанию выбирают неправильный.',
+    trad_head:'Традиционная модель', new_head:'Новая модель',
+    trad1:'Нанимать больше людей',trad2:'Управлять большим числом людей',trad3:'Нести больше затрат',trad4:'Зависеть от тех, кто вышел',trad5:'Повторять при каждом витке роста',
+    new1:'Структурировать работу',new2:'Систематизировать исполнение',new3:'Масштабироваться без найма',new4:'Добавлять контроль, а не затраты',new5:'Растить структуру, а не штат',
+    reframe_callout:'Большинство компаний продолжают нанимать. Умные убирают саму потребность.',
+    s_diag_ew:'Самооценка',
+    s_diag_h:'Что в вашей компании реально можно заменить?',
+    s_diag_sub:'Если ваш бизнес работает на повторяющихся воркфлоу, согласованиях и регулярном исполнении, у вас, скорее всего, больше заменяемой работы, чем вы думаете.',
+    dq1:'У вас есть повторяющиеся воркфлоу?',dq2:'Команда следует регулярным шагам?',
+    dq3:'Работа проходит через ревью или согласования?',dq4:'Люди тратят время на повторяющееся исполнение?',
+    dq5:'Рост обычно требует найма новых людей?',dq6:'Работа разбросана по чатам, документам и людям?',
+    diag_empty:'Выберите всё, что применимо к вашей компании', diag_empty_s:'Ваша диагностика появится здесь.',
+    diag_hi:'У вас, скорее всего, значительный объём заменяемого исполнения.',diag_hi_s:'Сильный сигнал. Ваши воркфлоу достаточно структурированы для систематизации.',
+    diag_mid:'У вас, вероятно, есть заменяемые воркфлоу, но сначала нужна структура.',diag_mid_s:'Хорошая база. Часть воркфлоу готова, часть требует проработки.',
+    diag_lo:'Возможно, вы ещё не готовы к замене исполнения.',diag_lo_s:'Ваши воркфлоу могут потребовать структурирования перед систематизацией.',
+    btn_how:'Как это работает',
+    s_how_ew:'Система',
+    s_how_h:'Не AI-инструмент. Новый способ работы компании.',
+    s_how_sub:'Мы не даём вам ещё одного ассистента. Мы строим структурированную систему исполнения для вашей компании, с нуля.',
+    fn1t:'Контекст',fn1d:'Мы онбордим вашу компанию и понимаем, как на самом деле устроена работа.',
+    fn2t:'Структура',fn2d:'Мы переводим исполнение в структурированные, прозрачные воркфлоу.',
+    fn3t:'Воркфлоу',fn3d:'Каждый воркфлоу получает шаги, входные данные, результаты и владельцев.',
+    fn4t:'Агенты',fn4d:'AI-агенты назначаются на исполнение в рамках определённых ролей.',
+    fn5t:'Правила',fn5d:'Guardrails, согласования и человеческие чекпоинты встроены в систему.',
+    fn6t:'Запуск',fn6d:'Работа перестаёт зависеть от людей. Она работает как система.',
+    how_callout:'Работа перестаёт зависеть от людей. Она работает как система.',
+    s_out_ew:'Что меняется', s_out_h:'Что меняется сразу.',
+    bef_head:'До', aft_head:'После',
+    b1:'Нанимать для роста',b2:'Больше людей = больше результата',b3:'Растущее давление на ФОТ',b4:'Исполнение зависит от людей',b5:'Разрозненные операции',b6:'Медленное, дорогое масштабирование',
+    a1:'Масштабироваться без найма',a2:'Та же команда = больше результата',a3:'Меньше затрат на единицу результата',a4:'Исполнение через систему',a5:'Больше структуры и контроля',a6:'Масштабируемая операционная модель',
+    s_ctrl_ew:'Встроенный контроль',
+    s_ctrl_h:'Вы не теряете контроль. Вы его получаете.',
+    s_ctrl_sub:'Большинство инструментов автоматизации убирают видимость. Большинство AI-инструментов убирают предсказуемость. Эта система делает наоборот.',
+    cc1t:'Роли',cc1d:'У каждой задачи есть владелец. У каждого агента своя область. Ничто не запускается без назначения.',
+    cc2t:'Правила',cc2d:'Явные операционные правила управляют каждым воркфлоу. Последовательно, прозрачно и без исключений.',
+    cc3t:'Согласования',cc3d:'Точки человеческого контроля встроены там, где это важно. Ничто критичное не выполняется без проверки.',
+    cc4t:'Ревью',cc4d:'Полная видимость истории исполнения. Каждое действие залогировано, проверяемо и подотчётно.',
+    ctrl_callout:'Ничто не выполняется бесконтрольно. Ничто не зависит от того, кто сегодня это делает.',
+    s_why_ew:'Сдвиг',
+    s_why_h:'Некоторые компании уже делают этот переход.',
+    s_why_sub:'Следующее операционное преимущество: не лучшие промпты. Это меньшая зависимость от найма. Ранние последователи уже реструктурируют исполнение.',
+    rs1t:'Более быстрое исполнение',rs1d:'Структурированные воркфлоу устраняют задержки передачи и координационные накладные расходы.',
+    rs2t:'Меньше операционных затрат',rs2d:'Тот же результат при меньших затратах на единицу, когда исполнение работает как система.',
+    rs3t:'Лучший контроль',rs3d:'Полная видимость исполнения со встроенными правилами, ролями и уровнями согласования.',
+    rs4t:'Больше пространства для роста',rs4d:'Когда исполнение не требует найма, рост становится задачей структуры, а не HR.',
+    why_callout:'Это не просто повышение эффективности. Это конкурентное преимущество.',
+    s_exp_ew:'Путь роста',
+    s_exp_h:'Начните с одной функции. Расширяйтесь по всей компании.',
+    s_exp_sub:'Вы не заменяете всё сразу. Большинство компаний начинают с одной операционной функции и расширяются оттуда.',
+    ex1t:'Outbound и sales-воркфлоу',ex1d:'Генерация лидов, квалификация, цепочки follow-up и управление пайплайном.',
+    ex2t:'Производство контента',ex2d:'КП, отчёты, маркетинговые материалы и коммуникации с клиентами.',
+    ex3t:'Внутренние операции',ex3d:'Согласования, координация, отслеживание статусов и внутренняя отчётность.',
+    ex4t:'Клиентский сервис',ex4d:'Онбординг-воркфлоу, доставка сервиса и контроль качества.',
+    exp_callout:'Одна система. Расширяется по всему бизнесу.',
+    s_cta_ew:'Перед следующим наймом',
+    s_cta_h:'Задайте лучший вопрос.',
+    q_old_tag:'Старый вопрос', q_old_txt:'«Кого нам нужно нанять следующим?»',
+    q_new_tag:'Лучший вопрос', q_new_txt:'«Какую работу больше не нужно закрывать наймом?»',
+    btn_run_diag:'Запустить диагностику', btn_book:'Записаться на демо →',
+    s_faq_ew:'Частые вопросы',
+    fq1:'Это ещё один AI-инструмент?',fa1:'Нет. Это структурированная система исполнения для вашей компании. Мы не даём промпты или чат-боты. Мы строим систему, в которой работа компании выполняется через определённые воркфлоу, роли, правила и агентов.',
+    fq2:'Это заменит всю команду?',fa2:'Нет. Это заменяет часть работы, которую команда сейчас делает вручную. Команда фокусируется на решениях, отношениях и стратегии. Система берёт на себя структурированное, повторяющееся исполнение.',
+    fq3:'Мы потеряем контроль над исполнением?',fa3:'Нет. Правила, согласования и чекпоинты встроены в систему по дизайну. Вы получаете больше видимости и контроля, чем при ручных процессах, зависящих от людей.',
+    fq4:'Нам нужно перестраивать весь бизнес?',fa4:'Нет. Система структурирует то, что уже существует. Мы начинаем с одной функции, строим воркфлоу и расширяемся. Ничего не нужно перестраивать заранее.',
+    fq5:'Это автоматизация?',fa5:'Не в традиционном смысле. Это исполнение воркфлоу с AI-ролями, уровнями контроля и человеческим надзором, ближе к операционной системе компании, чем к простому Zapier-флоу.',
+    fq6:'С чего обычно начинают компании?',fa6:'Большинство начинают с одной операционной функции: outbound, внутренние операции или производство контента. Мы картируем, что уже происходит, структурируем, строим первый воркфлоу, затем расширяемся.',
+
+    footer_about:'О компании', footer_contact:'Контакты',
+    footer_privacy:'Политика конфиденциальности', footer_terms:'Условия использования', footer_nda:'NDA',
+    footer_legal_title:'Информация о компании',
+    footer_reg:'Регистрационный номер (HK): 78104416',
+    footer_address_label:'Юридический адрес',
+    footer_director_label:'Директор',
+    footer_security_title:'Безопасность и контроль',
+    footer_s1:'Ролевое исполнение, без анонимных действий',
+    footer_s2:'Уровни согласования для критических результатов',
+    footer_s3:'Контрольные точки с участием человека',
+    footer_s4:'Ваши данные остаются под вашим контролем',
+    footer_s5:'Никакой неконтролируемой автоматизации',
+    footer_security_note:'Операции остаются прозрачными, подконтрольными и проверяемыми в любое время.',
+    footer_payment_title:'Реквизиты USD',
+    footer_acct_name:'Наименование счёта', footer_acct_num:'Номер счёта',
+    footer_routing:'Routing (ACH & Wire)', footer_bank:'Банк',
+    footer_payment_trust:'Платежи обрабатываются через регулируемых финансовых партнёров.',
+    footer_meta:'Для компаний под руководством основателей, масштабирующих операции без найма.',
+    nav_how_title:'Продукт',
+    footer_copy:'© 2025 Sellrise Limited · Все права защищены'
+  },
+  es:{
+    nav_how:'Cómo funciona', nav_calc:'Calculadora', nav_diag:'Diagnóstico',
+    nav_why:'Por qué ahora', nav_demo:'Reservar demo', nav_cta:'Ver qué puedes reemplazar',
+    proof1:'Para <strong>empresas B2B lideradas por fundadores</strong> con 5–50 empleados',
+    proof2:'Reemplaza la <strong>ejecución manual</strong> sin reemplazar tu equipo',
+    proof3:'Empieza con <strong>una función</strong>, luego expande por toda la empresa',
+    hero_tag:'Nuevo modelo operativo · No otra herramienta de IA',
+    hero_h1:'Deja de contratar.<br>Empieza a reemplazar trabajo.',
+    hero_sub:'No necesitas 2 contrataciones más. Necesitas eliminar el trabajo que harían.<br><br>La mayoría de empresas escalan así: más ingresos → más personas → más costes. Nosotros cambiamos eso: más ingresos → mismo equipo → menor coste por resultado.',
+    stat1_v:'5–50', stat1_l:'empleados, empresa típica',
+    stat2_v:'1 función', stat2_l:'para empezar, expande desde ahí',
+    stat3_v:'0 contrataciones', stat3_l:'necesarias para escalar la ejecución',
+    cta_replace:'Ver qué puedes reemplazar', cta_calc:'Calcular tus ahorros',
+    ctas_note:'Sin compromiso · Empieza con un diagnóstico',
+    mc_title:'Comparación de modelos de crecimiento',
+    mc_trad:'Crecimiento tradicional', mc_new:'Crecimiento basado en sistema',
+    mc_verdict:'El mismo crecimiento de ingresos. Coste por resultado significativamente menor.',
+    s_money_ew:'El coste real de contratar',
+    s_money_h:'Cada contratación cuesta más que el salario.',
+    s_money_sub:'No estás pagando solo por personas. Estás pagando por todo lo que viene con ellas.',
+    c1n:'Salario',c1d:'El coste base, que se acumula cada año sin un aumento proporcional en resultados.',
+    c2n:'Tiempo de incorporación',c2d:'3–6 meses antes de que un nuevo empleado alcance plena productividad.',
+    c3n:'Gastos de gestión',c3d:'Cada contratación crea una nueva capa de coordinación, dirección y revisión.',
+    c4n:'Retrasos en procesos',c4d:'Traspasos, malentendidos y vacíos en aprobaciones añaden latencia a cada flujo.',
+    c5n:'Varianza en ejecución',c5d:'La inconsistencia es estructural cuando el resultado depende del juicio individual.',
+    c6n:'Dependencia de personas',c6d:'Tu negocio se convierte en función de quién aparece y si se queda.',
+    money_callout:'No estás pagando por personas. Estás pagando por el trabajo que hacen. Y ese trabajo puede reemplazarse.',
+    s_calc_ew:'Calculadora de ahorros',
+    s_calc_h:'¿Cuánto gastas en ejecución?',
+    s_calc_sub:'Estima qué parte de tu coste operativo mensual está ligada a la ejecución manual.',
+    fl_emp:'Empleados enfocados en ejecución', fl_sal:'Coste mensual promedio por empleado',
+    fl_rep:'% de trabajo repetitivo / basado en flujos', fl_ovh:'Gastos de gestión mensuales por empleado',
+    calc_note:'Estas son estimaciones, no garantías. La replazabilidad real depende de la estructura de tus flujos de trabajo.',
+    r1_l:'Coste mensual de ejecución', r1_s:'Coste total del equipo incluyendo overhead',
+    r2_l:'Coste basado en flujos', r2_s:'Ejecución reemplazable estimada / mes',
+    r3_l:'Gasto anual en ejecución', r3_s:'Donde las empresas suelen empezar a reestructurar',
+    btn_diag:'Ejecutar diagnóstico',
+    s_reframe_ew:'Dos formas de crecer',
+    s_reframe_h:'No necesitas más personas. Necesitas menos ejecución manual.',
+    s_reframe_sub:'Solo hay dos formas de crecer. La mayoría de empresas eligen la incorrecta por defecto.',
+    trad_head:'Modelo tradicional', new_head:'Nuevo modelo',
+    trad1:'Contratar más personas',trad2:'Gestionar más personas',trad3:'Asumir más costes',trad4:'Depender de quién aparece',trad5:'Repetir en cada ciclo de crecimiento',
+    new1:'Estructurar el trabajo',new2:'Sistematizar la ejecución',new3:'Escalar sin aumentar plantilla',new4:'Añadir control, no costes',new5:'Hacer crecer la estructura, no la nómina',
+    reframe_callout:'La mayoría de empresas siguen contratando. Las más inteligentes eliminan la necesidad.',
+    s_diag_ew:'Autoevaluación',
+    s_diag_h:'¿Qué en tu empresa es realmente reemplazable?',
+    s_diag_sub:'Si tu negocio funciona con flujos repetibles, aprobaciones y ejecución recurrente, probablemente tienes más trabajo reemplazable de lo que crees.',
+    dq1:'¿Tienes flujos de trabajo repetibles?',dq2:'¿Los miembros del equipo siguen pasos recurrentes?',
+    dq3:'¿El trabajo pasa por revisiones o aprobaciones?',dq4:'¿Las personas dedican tiempo a ejecución repetitiva?',
+    dq5:'¿El crecimiento normalmente requiere más contrataciones?',dq6:'¿El trabajo está fragmentado entre chats, docs y personas?',
+    diag_empty:'Selecciona todo lo que aplique a tu empresa', diag_empty_s:'Tu diagnóstico aparecerá aquí.',
+    diag_hi:'Probablemente tienes una cantidad significativa de ejecución reemplazable.',diag_hi_s:'Señal fuerte. Tus flujos están suficientemente estructurados para sistematizar.',
+    diag_mid:'Probablemente tienes flujos reemplazables, pero primero necesitan estructura.',diag_mid_s:'Buena base. Algunos flujos están listos, otros necesitan más definición.',
+    diag_lo:'Puede que aún no estés listo para el reemplazo de ejecución.',diag_lo_s:'Tus flujos pueden necesitar más estructura antes de sistematizarse.',
+    btn_how:'Ver cómo funciona',
+    s_how_ew:'El sistema',
+    s_how_h:'No es una herramienta de IA. Es una nueva forma de operar tu empresa.',
+    s_how_sub:'No te damos otro asistente. Construimos un sistema de ejecución estructurado para tu empresa, desde cero.',
+    fn1t:'Contexto',fn1d:'Incorporamos tu empresa y entendemos cómo funciona el trabajo realmente.',
+    fn2t:'Estructura',fn2d:'Mapeamos la ejecución en flujos de trabajo estructurados y auditables.',
+    fn3t:'Flujos',fn3d:'Cada flujo recibe pasos definidos, entradas, salidas y responsables.',
+    fn4t:'Agentes',fn4d:'Se asignan agentes de IA para ejecutar dentro de roles definidos.',
+    fn5t:'Reglas',fn5d:'Guardrails, aprobaciones y checkpoints humanos integrados.',
+    fn6t:'Lanzamiento',fn6d:'El trabajo deja de depender de personas. Funciona como un sistema.',
+    how_callout:'El trabajo deja de depender de personas. Funciona como un sistema.',
+    s_out_ew:'Qué cambia', s_out_h:'Qué cambia de inmediato.',
+    bef_head:'Antes', aft_head:'Después',
+    b1:'Contratar para crecer',b2:'Más personas = más resultados',b3:'Presión creciente sobre la nómina',b4:'Ejecución dependiente de personas',b5:'Operaciones fragmentadas',b6:'Escalado lento y costoso',
+    a1:'Escalar sin contratar',a2:'Mismo equipo = más resultados',a3:'Menor coste por resultado',a4:'Ejecución guiada por sistema',a5:'Más estructura y control',a6:'Modelo operativo escalable',
+    s_ctrl_ew:'Supervisión integrada',
+    s_ctrl_h:'No pierdes control. Lo ganas.',
+    s_ctrl_sub:'La mayoría de herramientas de automatización eliminan la visibilidad. La mayoría de herramientas de IA eliminan la predictibilidad. Este sistema hace lo contrario.',
+    cc1t:'Roles',cc1d:'Cada tarea tiene un responsable definido. Cada agente tiene un alcance definido. Nada se ejecuta sin asignación.',
+    cc2t:'Reglas',cc2d:'Reglas operativas explícitas gobiernan cada flujo. Consistentes, auditables y no negociables por diseño.',
+    cc3t:'Aprobaciones',cc3d:'Los puntos de aprobación humana están integrados donde importan. Nada crítico se ejecuta sin revisión.',
+    cc4t:'Revisión',cc4d:'Visibilidad total del historial de ejecución. Cada acción está registrada, revisable y accountable.',
+    ctrl_callout:'Nada se ejecuta sin control. Nada depende de quién lo esté haciendo en ese momento.',
+    s_why_ew:'El cambio',
+    s_why_h:'Algunas empresas ya están haciendo este cambio.',
+    s_why_sub:'La próxima ventaja operativa no son mejores prompts. Es menor dependencia del headcount. Los primeros en adoptarlo ya están reestructurando la ejecución.',
+    rs1t:'Ejecución más rápida',rs1d:'Los flujos estructurados eliminan retrasos en traspasos y overhead de coordinación.',
+    rs2t:'Menor coste operativo',rs2d:'El mismo resultado a menor coste por unidad cuando la ejecución funciona como sistema.',
+    rs3t:'Mejor control',rs3d:'Visibilidad total de la ejecución con reglas, roles y capas de aprobación integrados.',
+    rs4t:'Más espacio para crecer',rs4d:'Cuando la ejecución no requiere headcount, crecer se convierte en un problema de estructura, no de contratación.',
+    why_callout:'Esto no es solo una mejora de eficiencia. Es una ventaja competitiva.',
+    s_exp_ew:'Camino de crecimiento',
+    s_exp_h:'Empieza con una función. Expande por toda la empresa.',
+    s_exp_sub:'No reemplazas todo a la vez. La mayoría de empresas empiezan con una parte de sus operaciones.',
+    ex1t:'Flujos de outbound y ventas',ex1d:'Generación de leads, cualificación, secuencias de seguimiento y gestión del pipeline.',
+    ex2t:'Producción de contenido',ex2d:'Propuestas, informes, activos de marketing y comunicaciones con clientes.',
+    ex3t:'Operaciones internas',ex3d:'Aprobaciones, coordinación, seguimiento de estado e informes internos.',
+    ex4t:'Entrega al cliente',ex4d:'Flujos de onboarding, entrega de servicios y procesos de control de calidad.',
+    exp_callout:'Un sistema. Expandiéndose por todo tu negocio.',
+    s_cta_ew:'Antes de tu próxima contratación',
+    s_cta_h:'Haz una pregunta mejor.',
+    q_old_tag:'Pregunta antigua', q_old_txt:'«¿A quién necesitamos contratar a continuación?»',
+    q_new_tag:'Pregunta mejor', q_new_txt:'«¿Qué trabajo ya no debería requerir una contratación?»',
+    btn_run_diag:'Ejecutar diagnóstico', btn_book:'Reservar demo →',
+    s_faq_ew:'Preguntas frecuentes',
+    fq1:'¿Es esto otra herramienta de IA?',fa1:'No. Es un sistema de ejecución estructurado para tu empresa. No te damos prompts, asistentes ni chatbots. Construimos un sistema donde el trabajo de tu empresa fluye a través de flujos, roles, reglas y agentes definidos.',
+    fq2:'¿Reemplazará a todo mi equipo?',fa2:'No. Reemplaza partes del trabajo que tu equipo hace actualmente de forma manual. Tu equipo se enfoca en decisiones, relaciones y estrategia. El sistema maneja la ejecución estructurada y repetitiva.',
+    fq3:'¿Perdemos el control sobre la ejecución?',fa3:'No. Las reglas, aprobaciones y checkpoints están integrados en el sistema por diseño. Obtienes más visibilidad y control del que tienes con procesos manuales dependientes de personas.',
+    fq4:'¿Necesitamos reconstruir todo nuestro negocio?',fa4:'No. El sistema estructura lo que ya existe. Empezamos con una función, construimos el flujo y expandimos desde ahí. No necesitas reestructurar nada antes de empezar.',
+    fq5:'¿Es esto automatización?',fa5:'No en el sentido tradicional. Es ejecución de flujos con IA basada en roles, capas de control y supervisión humana, más cercano a un sistema operativo estructurado que a un flujo de automatización simple.',
+    fq6:'¿Por dónde suelen empezar las empresas?',fa6:'La mayoría empieza con una función operativa: outbound, operaciones internas o producción de contenido. Mapeamos lo que ya ocurre, lo estructuramos, construimos el primer flujo y luego expandimos.',
+
+    footer_about:'Sobre nosotros', footer_contact:'Contacto',
+    footer_privacy:'Política de privacidad', footer_terms:'Términos de servicio', footer_nda:'NDA',
+    footer_legal_title:'Información de la empresa',
+    footer_reg:'Registro empresarial (HK): 78104416',
+    footer_address_label:'Dirección registrada',
+    footer_director_label:'Director',
+    footer_security_title:'Seguridad y control',
+    footer_s1:'Ejecución basada en roles, sin acciones anónimas',
+    footer_s2:'Capas de aprobación para resultados críticos',
+    footer_s3:'Puntos de control con intervención humana',
+    footer_s4:'Tus datos permanecen bajo tu control',
+    footer_s5:'Sin automatización no controlada',
+    footer_security_note:'Las operaciones permanecen auditables, controladas y revisables en todo momento.',
+    footer_payment_title:'Datos de pago USD',
+    footer_acct_name:'Nombre de cuenta', footer_acct_num:'Número de cuenta',
+    footer_routing:'Routing (ACH & Wire)', footer_bank:'Banco',
+    footer_payment_trust:'Pagos procesados a través de socios de infraestructura financiera regulada.',
+    footer_meta:'Para empresas lideradas por fundadores que escalan operaciones sin aumentar plantilla.',
+    nav_how_title:'Producto',
+    footer_copy:'© 2025 Sellrise Limited · Todos los derechos reservados'
+  }
+};
+
+let lang='en';
+
+const langMeta={
+  en:{flag:'🇬🇧',label:'EN'},
+  ru:{flag:'🇷🇺',label:'RU'},
+  es:{flag:'🇪🇸',label:'ES'}
+};
+
+function toggleLangDd(){
+  $('langDd').classList.toggle('open');
+}
+
+// Close dropdown when clicking outside
+document.addEventListener('click',e=>{
+  if(!$('langDd').contains(e.target)) $('langDd').classList.remove('open');
+});
+
+function setLang(l){
+  lang=l;
+  // Update dropdown button
+  $('langFlag').textContent=langMeta[l].flag;
+  $('langLabel').textContent=langMeta[l].label;
+  // Update active option
+  ['en','ru','es'].forEach(code=>{
+    $('opt-'+code).classList.toggle('active',code===l);
+  });
+  $('langDd').classList.remove('open');
+  document.documentElement.lang=l;
+  applyLang();
+}
+
+function applyLang(){
+  const t=T[lang];
+  // Simple text keys
+  const map={
+    'nav_how':'nav_how','nav_calc':'nav_calc','nav_diag':'nav_diag',
+    'nav_why':'nav_why','nav_demo':'nav_demo','nav_cta':'nav_cta',
+    'proof1':'proof1','proof2':'proof2','proof3':'proof3',
+    'hero_tag':'hero_tag',
+    'stat1_v':'stat1_v','stat1_l':'stat1_l',
+    'stat2_v':'stat2_v','stat2_l':'stat2_l',
+    'stat3_v':'stat3_v','stat3_l':'stat3_l',
+    'cta_replace':'cta_replace','cta_calc':'cta_calc','ctas_note':'ctas_note',
+    'mc_title':'mc_title','mc_trad':'mc_trad','mc_new':'mc_new','mc_verdict':'mc_verdict',
+    's_money_ew':'s_money_ew','s_money_h':'s_money_h','s_money_sub':'s_money_sub',
+    'c1n':'c1n','c1d':'c1d','c2n':'c2n','c2d':'c2d','c3n':'c3n','c3d':'c3d',
+    'c4n':'c4n','c4d':'c4d','c5n':'c5n','c5d':'c5d','c6n':'c6n','c6d':'c6d',
+    'money_callout':'money_callout',
+    's_calc_ew':'s_calc_ew','s_calc_h':'s_calc_h','s_calc_sub':'s_calc_sub',
+    'fl_emp':'fl_emp','fl_sal':'fl_sal','fl_rep':'fl_rep','fl_ovh':'fl_ovh',
+    'calc_note':'calc_note',
+    'r1_l':'r1_l','r1_s':'r1_s','r2_l':'r2_l','r2_s':'r2_s','r3_l':'r3_l','r3_s':'r3_s',
+    'btn_diag':'btn_diag',
+    's_reframe_ew':'s_reframe_ew','s_reframe_h':'s_reframe_h','s_reframe_sub':'s_reframe_sub',
+    'trad_head':'trad_head','new_head':'new_head',
+    'trad1':'trad1','trad2':'trad2','trad3':'trad3','trad4':'trad4','trad5':'trad5',
+    'new1':'new1','new2':'new2','new3':'new3','new4':'new4','new5':'new5',
+    'reframe_callout':'reframe_callout',
+    's_diag_ew':'s_diag_ew','s_diag_h':'s_diag_h','s_diag_sub':'s_diag_sub',
+    'dq1':'dq1','dq2':'dq2','dq3':'dq3','dq4':'dq4','dq5':'dq5','dq6':'dq6',
+    'btn_how':'btn_how',
+    's_how_ew':'s_how_ew','s_how_h':'s_how_h','s_how_sub':'s_how_sub',
+    'fn1t':'fn1t','fn1d':'fn1d','fn2t':'fn2t','fn2d':'fn2d',
+    'fn3t':'fn3t','fn3d':'fn3d','fn4t':'fn4t','fn4d':'fn4d',
+    'fn5t':'fn5t','fn5d':'fn5d','fn6t':'fn6t','fn6d':'fn6d',
+    'how_callout':'how_callout',
+    's_out_ew':'s_out_ew','s_out_h':'s_out_h',
+    'bef_head':'bef_head','aft_head':'aft_head',
+    'b1':'b1','b2':'b2','b3':'b3','b4':'b4','b5':'b5','b6':'b6',
+    'a1':'a1','a2':'a2','a3':'a3','a4':'a4','a5':'a5','a6':'a6',
+    's_ctrl_ew':'s_ctrl_ew','s_ctrl_h':'s_ctrl_h','s_ctrl_sub':'s_ctrl_sub',
+    'cc1t':'cc1t','cc1d':'cc1d','cc2t':'cc2t','cc2d':'cc2d',
+    'cc3t':'cc3t','cc3d':'cc3d','cc4t':'cc4t','cc4d':'cc4d',
+    'ctrl_callout':'ctrl_callout',
+    's_why_ew':'s_why_ew','s_why_h':'s_why_h','s_why_sub':'s_why_sub',
+    'rs1t':'rs1t','rs1d':'rs1d','rs2t':'rs2t','rs2d':'rs2d',
+    'rs3t':'rs3t','rs3d':'rs3d','rs4t':'rs4t','rs4d':'rs4d',
+    'why_callout':'why_callout',
+    's_exp_ew':'s_exp_ew','s_exp_h':'s_exp_h','s_exp_sub':'s_exp_sub',
+    'ex1t':'ex1t','ex1d':'ex1d','ex2t':'ex2t','ex2d':'ex2d',
+    'ex3t':'ex3t','ex3d':'ex3d','ex4t':'ex4t','ex4d':'ex4d',
+    'exp_callout':'exp_callout',
+    's_cta_ew':'s_cta_ew','s_cta_h':'s_cta_h',
+    'q_old_tag':'q_old_tag','q_old_txt':'q_old_txt',
+    'q_new_tag':'q_new_tag','q_new_txt':'q_new_txt',
+    'btn_run_diag':'btn_run_diag','btn_book':'btn_book',
+    's_faq_ew':'s_faq_ew',
+    'fq1':'fq1','fa1':'fa1','fq2':'fq2','fa2':'fa2',
+    'fq3':'fq3','fa3':'fa3','fq4':'fq4','fa4':'fa4',
+    'fq5':'fq5','fa5':'fa5','fq6':'fq6','fa6':'fa6',
+
+    'footer_about':'footer_about','footer_contact':'footer_contact',
+    'footer_privacy':'footer_privacy','footer_terms':'footer_terms','footer_nda':'footer_nda',
+    'footer_legal_title':'footer_legal_title','footer_reg':'footer_reg',
+    'footer_address_label':'footer_address_label','footer_director_label':'footer_director_label',
+    'footer_security_title':'footer_security_title',
+    'footer_s1':'footer_s1','footer_s2':'footer_s2','footer_s3':'footer_s3',
+    'footer_s4':'footer_s4','footer_s5':'footer_s5',
+    'footer_security_note':'footer_security_note',
+    'footer_payment_title':'footer_payment_title',
+    'footer_acct_name':'footer_acct_name','footer_acct_num':'footer_acct_num',
+    'footer_routing':'footer_routing','footer_bank':'footer_bank',
+    'footer_payment_trust':'footer_payment_trust','footer_meta':'footer_meta',
+    'nav_how_title':'nav_how_title',
+    'footer_copy':'footer_copy'
+  };
+  document.querySelectorAll('[data-i18n]').forEach(el=>{
+    const key=el.getAttribute('data-i18n');
+    if(t[key]!==undefined) el.innerHTML=t[key];
+  });
+  // Reset diagnosis state on lang change
+  dUpdate();
+}
+
+/* ── MODAL ── */
+const modalTitles={
+  en:{title:'Book a demo',sub:'Pick a time that works for you'},
+  ru:{title:'Записаться на демо',sub:'Выберите удобное время'},
+  es:{title:'Reservar demo',sub:'Elige un horario que te venga bien'}
+};
+
+function openDemoModal(){
+  const t=modalTitles[lang]||modalTitles.en;
+  $('modalTitle').textContent=t.title;
+  $('modalSub').textContent=t.sub;
+  $('demoModal').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+
+function closeDemoModal(){
+  $('demoModal').classList.remove('open');
+  document.body.style.overflow='';
+}
+
+function closeModal(e){
+  if(e.target===$('demoModal')) closeDemoModal();
+}
+
+document.addEventListener('keydown',e=>{
+  if(e.key==='Escape') closeDemoModal();
+});
+
+/* ── A/B TEST SYSTEM ── */
+const HERO_VARIANTS = {
+  A: {
+    id:'A',
+    h1:'Stop hiring.<br>Start replacing work.',
+    sub:'You don\'t need 2 more hires. You need to remove the work they would do.<br><br>Most companies scale like this: more revenue → more people → more cost. We change that: more revenue → same team → lower cost per output.',
+    cta1:'Calculate your savings', cta1_href:'#calculator', cta1_ev:'hero_primary_cta_click',
+    cta2:'Book a demo', cta2_ev:'hero_secondary_cta_click',
+    tag:'New operating model · Not another AI tool',
+    visual:'Traditional growth vs system-led growth'
+  },
+  B: {
+    id:'B',
+    h1:'Grow without scaling your team.',
+    sub:'Replace manual execution with structured AI workflows, so your business can grow without adding headcount at the same pace.',
+    cta1:'See what you can replace', cta1_href:'#diagnosis', cta1_ev:'hero_primary_cta_click',
+    cta2:'Book a demo', cta2_ev:'hero_secondary_cta_click',
+    tag:'More revenue · Same team · Lower cost per output',
+    visual:'More revenue. Same team. Lower cost per output.'
+  },
+  C: {
+    id:'C',
+    h1:'Your next stage of growth should not require your next round of hiring.',
+    sub:'Most companies grow by adding payroll. We help you grow by reducing the amount of work that still needs people.',
+    cta1:'Calculate your cost of execution', cta1_href:'#calculator', cta1_ev:'hero_primary_cta_click',
+    cta2:'Book a demo', cta2_ev:'hero_secondary_cta_click',
+    tag:'Scale output, not payroll',
+    visual:'Scale output, not payroll'
+  },
+  D: {
+    id:'D',
+    h1:'Scale execution without losing control.',
+    sub:'Replace manual work with structured AI workflows, built with rules, approvals, and checkpoints, so growth doesn\'t turn into headcount chaos.',
+    cta1:'Run a quick diagnosis', cta1_href:'#diagnosis', cta1_ev:'hero_primary_cta_click',
+    cta2:'Book a demo', cta2_ev:'hero_secondary_cta_click',
+    tag:'Structured growth beats headcount chaos',
+    visual:'Structured growth beats headcount chaos'
+  },
+  E: {
+    id:'E',
+    h1:'The companies that adapt first will grow cheaper.',
+    sub:'Some businesses are still scaling by hiring. Others are already replacing execution with systems.<br><br>The gap is starting to show.',
+    cta1:'See how the model works', cta1_href:'#how-it-works', cta1_ev:'hero_primary_cta_click',
+    cta2:'Book a demo', cta2_ev:'hero_secondary_cta_click',
+    tag:'Operating advantage compounds',
+    visual:'Operating advantage compounds'
+  }
+};
+
+function getOrAssignVariant(){
+  const DURATION_DAYS = 30;
+  const stored = localStorage.getItem('ab_hero');
+  if(stored){
+    const {variant, ts} = JSON.parse(stored);
+    const age = (Date.now() - ts) / (1000*60*60*24);
+    if(age < DURATION_DAYS && HERO_VARIANTS[variant]) return variant;
+  }
+  const keys = Object.keys(HERO_VARIANTS);
+  const variant = keys[Math.floor(Math.random()*keys.length)];
+  localStorage.setItem('ab_hero', JSON.stringify({variant, ts:Date.now()}));
+  return variant;
+}
+
+function applyHeroVariant(v){
+  const variant = HERO_VARIANTS[v];
+  if(!variant) return;
+  const h1 = document.querySelector('[data-i18n="hero_h1"]');
+  const sub = document.querySelector('[data-i18n="hero_sub"]');
+  const tag = document.querySelector('[data-i18n="hero_tag"]');
+  const cta1 = document.querySelector('.hero-ctas .btn-p');
+  const cta2 = document.querySelector('.hero-ctas .btn-s');
+  if(h1) h1.innerHTML = variant.h1;
+  if(sub) sub.innerHTML = variant.sub;
+  if(tag) tag.textContent = variant.tag;
+  if(cta1){ cta1.textContent = variant.cta1; cta1.href = variant.cta1_href; cta1.onclick = ()=>ev(variant.cta1_ev); }
+  if(cta2){ cta2.onclick = ()=>{openDemoModal();ev(variant.cta2_ev);}; }
+  // Store variant id on body for analytics
+  document.body.setAttribute('data-ab-variant', v);
+  ev('hero_variant_assigned', {variant: v});
+}
+
+/* ── CALCULATOR ── */
+function calcUpdate(){
+  const emp=+$('r-emp').value,sal=+$('r-sal').value,rep=+$('r-rep').value/100,ovh=+$('r-ovh').value;
+  $('v-emp').textContent=emp;
+  $('v-sal').textContent=fmt(sal);
+  $('v-rep').textContent=Math.round(rep*100)+'%';
+  $('v-ovh').textContent=fmt(ovh);
+  const base=emp*(sal+ovh),wf=base*rep;
+  $('r-total').textContent=fmt(base);
+  $('r-workflow').textContent=fmt(wf);
+  $('r-annual').textContent=fmt(wf*12);
+  ev('calculator_input_changed');
+}
+
+/* ── DIAGNOSIS ── */
+function dToggle(el){el.classList.toggle('on');dUpdate();}
+function dUpdate(){
+  const t=T[lang];
+  const n=document.querySelectorAll('.di.on').length,box=$('diagOut');
+  if(!n){
+    box.style.cssText='';
+    box.innerHTML=`<div class="diag-icon">○</div><div><div class="diag-ttl">${t.diag_empty}</div><div class="diag-stl">${t.diag_empty_s}</div></div>`;
+    return;
+  }
+  if(n===1)ev('diagnosis_started');
+  let icon,title,sub,bg,bc;
+  if(n>=4){icon='✓';bg='var(--blue-lt)';bc='var(--blue-bd)';title=t.diag_hi;sub=t.diag_hi_s;if(n===6)ev('diagnosis_completed');}
+  else if(n>=2){icon='◐';bg='#fffbeb';bc='#fde68a';title=t.diag_mid;sub=t.diag_mid_s;}
+  else{icon='–';bg='var(--bg)';bc='var(--border)';title=t.diag_lo;sub=t.diag_lo_s;}
+  box.style.background=bg;box.style.borderColor=bc;
+  box.innerHTML=`<div class="diag-icon" style="background:${bc}">${icon}</div><div><div class="diag-ttl">${title}</div><div class="diag-stl">${sub}</div></div>`;
+}
+
+/* ── FAQ ── */
+function faqT(el){
+  const item=el.parentElement,was=item.classList.contains('open');
+  document.querySelectorAll('.fi').forEach(i=>i.classList.remove('open'));
+  if(!was)item.classList.add('open');
+}
+
+/* ── FLOAT ── */
+const floatBtn=$('floatBtn');
+window.addEventListener('scroll',()=>{
+  floatBtn.classList.toggle('on',window.scrollY>480);
+  document.getElementById('mainNav').classList.toggle('scrolled',window.scrollY>10);
+},{passive:true});
+
+/* ── SCROLL REVEAL ── */
+const revealEls=document.querySelectorAll('section');
+const revealObs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');}});
+},{threshold:0.08});
+revealEls.forEach(el=>{el.classList.add('reveal');revealObs.observe(el);});
+document.getElementById('hero').classList.add('visible');
+
+/* ── INIT ── */
+const abVariant = getOrAssignVariant();
+applyHeroVariant(abVariant);
+
+function ev(e, data){
+  console.log('[21Do]', e, data||'');
+}
+
+calcUpdate();
+</script>
+</body>
+</html>
